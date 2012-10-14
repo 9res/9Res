@@ -257,6 +257,11 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\AccountScripts\career.js" />
+    <Content Include="Scripts\AccountScripts\contactinfo.js" />
+    <Content Include="Scripts\AccountScripts\distinctions.js" />
+    <Content Include="Scripts\AccountScripts\expertise.js" />
+    <Content Include="Scripts\AccountScripts\keywords.js" />
     <Content Include="Scripts\AccountScripts\objective.js" />
     <Content Include="Scripts\animatedcollapse.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />

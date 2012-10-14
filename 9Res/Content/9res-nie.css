@@ -135,7 +135,7 @@
 	#ds_peek_dtl{ border-top-width:1px;	border-top-style:solid;	border-top-color:black;	border-right-width:1px;
 				border-right-style:solid;	border-right-color:black;	border-bottom-width:1px;	border-bottom-style:solid;
 				border-bottom-color:black;	float:top;		height:80px;	margin:0px;	left:161px;
-				width:866px;	padding:0px;	background-image: url('Content/images/peek_gradient1.bmp');}
+				width:866px;	padding:0px;	background-image: url('/Content/images/peek_gradient1.bmp');}
 	#ds_input input[type="text"] { 	width: 220px;}
 
 /* EXPERTISE --------------------------------------------------------------------------- */
@@ -221,7 +221,7 @@
 	td.tl { padding-left:9px; padding-right:10px; padding-top:2px; padding-bottom:2px;}
 
 	td.cr_txt_peek { color:#737373; font-size:13pt; text-align:left;  font-size:10pt; font-family: Arial, sans-serif; padding-left:10px; padding-right:10px;
-					border-width:1px;	border-style:solid;	border-color:black;	 background-image: url('Content/images/peek_gradient4.bmp');}
+					border-width:1px;	border-style:solid;	border-color:black;	 background-image: url('/Content/images/peek_gradient4.bmp');}
 
 	td.cr_peek_spacer{width:12px;}
 	

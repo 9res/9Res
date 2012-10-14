@@ -22,3 +22,11 @@ C:\Users\Uri\Downloads\my tools\9Res\9Res.Tests\bin\Debug\9Res.pdb
 C:\Users\Uri\Downloads\my tools\9Res\9Res.Tests\obj\Debug\9Res.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Uri\Downloads\my tools\9Res\9Res.Tests\obj\Debug\9Res.Tests.dll
 C:\Users\Uri\Downloads\my tools\9Res\9Res.Tests\obj\Debug\9Res.Tests.pdb
+C:\cygwin\home\Uri\9Res\9Res.Tests\bin\Debug\9Res.Tests.dll.config
+C:\cygwin\home\Uri\9Res\9Res.Tests\bin\Debug\9Res.Tests.dll
+C:\cygwin\home\Uri\9Res\9Res.Tests\bin\Debug\9Res.Tests.pdb
+C:\cygwin\home\Uri\9Res\9Res.Tests\bin\Debug\9Res.dll
+C:\cygwin\home\Uri\9Res\9Res.Tests\bin\Debug\9Res.pdb
+C:\cygwin\home\Uri\9Res\9Res.Tests\obj\Debug\9Res.Tests.csprojResolveAssemblyReference.cache
+C:\cygwin\home\Uri\9Res\9Res.Tests\obj\Debug\9Res.Tests.dll
+C:\cygwin\home\Uri\9Res\9Res.Tests\obj\Debug\9Res.Tests.pdb
