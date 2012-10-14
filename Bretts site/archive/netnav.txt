@@ -1,0 +1,30 @@
+// this sets the navigation bar backgrounds depending upon
+// a. what page you're on 
+// b. whether you're on or off a give nav line
+// c. whether the page is filled out or not
+function setNav(prm_id, prm_val) {
+	var out_val = "";
+	var currPage = document.getElementById("curr_sel").value;
+
+	// the current page is always on
+	if(prm_id == currPage) { prm_val = "on";}
+	
+/*
+	switch(x){
+		case "": return "";
+		case "ft": return "full-time";
+		case "pt": return "part-time position";
+		case "con": return "a contract position";
+		default:  return  x + "?";
+	}
+*/
+	if(prm_id == "nav") { out_val = prm_id + "_" + prm_val; }
+	if(prm_id == "wel") { out_val = "nav_oth_" + prm_val; }
+	if(prm_id == "res") { out_val = "res_" + prm_val; }
+	if(prm_id == "abt") { out_val = "nav_oth_" + prm_val; }
+	if(out_val == "")   { out_val = "nav_" + prm_val; 
+							if(document.getElementById(prm_id +"_pop").value==1) { out_val += "_chk";}
+	}
+	return out_val;
+   
+}

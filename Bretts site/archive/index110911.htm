@@ -1,0 +1,189 @@
+<html>
+<head>
+<STYLE TYPE="text/css" MEDIA=screen>
+body,
+html {		background:#E5F7FD;	margin:0;	padding:0;	color:#000;	}
+p{		font-family: calibri, arial, sans-serif;} 
+#wrap {		background:white;	margin:0 auto;    }
+#nav {		background:#00B0F0;	float:left;	width:158px;	color:#E8EEFD;	}
+#bord {		background:black;	width:10px;	}
+#main {		background:#E5F7FD;	width=100%;	}
+#hdr {		overflow: auto; height: 120px;}
+#ppane {	position: absolute;  
+		top:158; right:0;
+		border-width: .2em;
+		border-style: dotted;
+		border-color: #900; }
+#peek {		}
+#util {         }
+p.hdr {		color:#737373;	font-size:13pt;}
+
+#util input[type="text"], #inputArea textarea, select[type="text"]
+{
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    margin-bottom: 5px;
+    margin-right: 11px;
+    display: block;
+    padding: 2	px;
+    border: solid 1px #6887BB;
+    width: 160px;
+    background-image: url( './images/input_gradient1.bmp' );
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+table, td, th, tr{padding:0;border-spacing:0;color:white;font-family: calibri, Arial, sans-serif;font-size:14pt;}
+td.nav_top{							padding-left:30px;}
+td.nav_off{	background: url("./images/nav_bullet_off.bmp");	padding-left:46px;	color:white;}
+td.nav_on{	background: url("./images/nav_bullet_on.bmp");	padding-left:46px;	color:#FFDDEE;}
+td.nav_lof{	background: url("./images/nav_blast_off.bmp");	padding-left:46px;	color:white;}
+td.nav_lon{	background: url("./images/nav_blast_on.bmp");	padding-left:46px;	color:#FFDDEE;}
+td.res_off{	background: url("./images/nav_res_off.bmp"); 	padding-left:26px;	padding-top:10px;}
+td.res_on{	background: url("./images/nav_res_on.bmp");	padding-left:26px;	padding-top:10px;}
+td.nav_oth_off {						padding-bottom:10px; 	text-align:center;	color:white;}
+td.nav_oth_on {							padding-bottom:10px;	text-align:center;	color:#FFDDEE;}
+td.hdr_top{	color:#0070C0;}
+td.ppn{		background:white;	color:navy;}
+td.border{	background: url("./images/border_pixel.bmp");	}
+td.hdr_line{	background: url("./images/hdr_line.bmp");	}
+td.display {    padding-left:10px; padding-right:10px;}
+td.ppn_title{	background:#004873; 	font-size:8pt;		text-align:center;}
+td.util_hdr {   color:#0070C0; font-size:14pt; font-weight:bold; text-align:center; width:120px;}
+td.util_lbl {   color:#737373; font-size:11pt; width:150px; height:20px;}
+td.util_pic {   text-align:center; padding-top:10px;}
+td.algn_top {   vertical-align:top;} 
+</STYLE>
+
+</head>
+<body>
+<div id="wrap">
+	<div id="nav">
+		<table class="nav_tab" height=100% width=158>
+		<tr><td ><img src="./images/logo.bmp" width=157 height=113></td><td class="border" width=1 rowspan=13></td></tr>
+		<tr><td ><img src="./images/logo_footer.bmp" width=157 height=53></td></tr>
+		<tr><td class="nav_oth_off" onmouseover="this.className='nav_oth_on'" onmouseout="this.className='nav_oth_off'">Welcome!</td></tr>
+		<tr><td class="res_off" onmouseover="this.className='res_on'" onmouseout="this.className='res_off'">Your Resume</td></tr>
+		<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Contact Info</td></tr>
+		<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Objective</td></tr>
+		<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Expertise</td></tr>
+		<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Career</td></tr>
+		<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Distinctions</td></tr>
+		<tr><td class="nav_lof" onmouseover="this.className='nav_lon'" onmouseout="this.className='nav_lof'">Keywords</td></tr>
+		<tr height=100%><td>&nbsp;</td></tr>
+		<tr><td><img src="./images/nav_footer.bmp" width=157 height=11></td></tr>
+		<tr><td class="nav_oth_off" onmouseover="this.className='nav_oth_on'" onmouseout="this.className='nav_oth_off'">About the Site</td></tr>
+		</table>
+
+	</div>
+	<div id="main">
+		<div id="hdr">
+		<table border=0 class="hdr" height=120 width="866">
+		<tr height=120><td class="hdr_top">
+			<table border=0 height=100% width=100%>
+			<tr height=42>
+			<td width=40 class="hdr_line"></td>
+			<td width=280 class="hdr_line"><img src="./images/hdr_contact_info.bmp"></td>
+			<td width=546 class="hdr_line"></td>
+			</tr>
+			<tr height=100%><td class="display" colspan=3 width=100%>
+				<p class="hdr">This section is a breeze.  Just put in the information you’d like available on your resume.   If there’s any information you don’t want on your resume, just don’t fill it in!&nbsp;&nbsp;Oh, and if you can import the data, you’ll be 80% done with your entire resume in about 10 seconds.</p>
+			</td></tr>
+			</table>
+		</td></tr>
+		</table>
+		</div>
+		<div id="ppane">
+			<table border=0 class="hdr" height=128 width=866>
+			<tr height=128><td class="ppn">testing</td></tr>
+			</table>
+		</div>
+		<div id="util">
+			<table class="util" width=866>
+				<tr><td class="ppn_title" width=50%>PREVIEW PANE</td><td class="ppn_title" width=50%>PREVIEW PANE</td></tr>
+			</table>
+			<table>
+			<tr><td class="util_hdr" rowspan=2>Import</td>
+			    <td class="util_lbl">site</td>
+			    <td colspan=3></td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td class="algn_top"><img src="images/cmd_import.bmp"></td>
+			    <td colspan=2></td></tr>
+			<tr><td class="util_hdr"  rowspan=2>Email</td>
+			    <td class="util_lbl">address</td>
+			    <td class="util_lbl">password</td>
+			    <td colspan=2></td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td colspan=2></td></tr>
+			<tr><td class="util_hdr"  rowspan=2>Name</td>
+			    <td class="util_lbl">first</td>
+			    <td class="util_lbl">middle</td>
+			    <td class="util_lbl">last</td>
+			    <td></td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td></td></tr>
+
+			<tr><td class="util_hdr"  rowspan=2>Address</td>
+			    <td class="util_lbl">street</td>
+			    <td class="util_lbl">city/town</td>
+			    <td class="util_lbl">state/province</td>
+			    <td class="util_lbl">zip/postal code</td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td></tr>
+			<tr><td class="util_hdr"  rowspan=2>Phone</td>
+			    <td class="util_lbl">phone 1</td>
+			    <td class="util_lbl">number 1</td>
+			    <td class="util_lbl">phone 2</td>
+			    <td class="util_lbl">number 2</td></tr>
+			<tr><td>
+				<select name="phone1" id="phone1" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">Home</option>
+            			    <option value="2" class="">Work</option>
+            			    <option value="3" class="">Mobile</option>
+			        </select></td>
+			    <td><input type="text" name="q"></td>
+			    <td><select name="phone1" id="phone1" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">Home</option>
+            			    <option value="2" class="">Work</option>
+            			    <option value="3" class="">Mobile</option>
+			        </select></td>
+			    <td><input type="text" name="q"></td></tr>
+
+			<tr><td class="util_hdr" rowspan=5>Other Stuff</td>
+			    <td rowspan=5><img width=135 height=130 src="data/photos/akabret-1.jpg"></td>
+			    <td rowspan=2><img src="images/cmd_upload.bmp"></td>
+			    <td class="util_lbl">travel</td>
+			    <td rowspan=5></td></tr>
+			<tr><td>
+			        <select name="user_travel" id="trvl" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">None</option>
+            			    <option value="2" class="">A few trips a year</option>
+            			    <option value="3" class="">One trip a month</option>
+            			    <option value="4" class="">Several trips a month</option>
+            			    <option value="5" class="">Lots of travel</option>
+			        </select></td></tr>
+			<tr><td class="util_lbl">social media</td>
+			    <td class="util_lbl">ID</td></tr>
+			<tr><td><select name="user_travel" id="trvl" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">Facebook</option>
+            			    <option value="2" class="">LinkedIn</option>
+            			    <option value="3" class="">Skype</option>
+			        </select></td>
+			    <td><input type="text" name="q"></td></tr>
+			<tr><td colspan=2>&nbsp;</td></tr>
+			</table>
+			
+		</div>
+	</div>
+</div>
+</body>
+</html>
