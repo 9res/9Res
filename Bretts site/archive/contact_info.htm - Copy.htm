@@ -1,0 +1,232 @@
+<html>
+<head>
+<!DOCTYPE HTML>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="animatedcollapse.js">
+
+/***********************************************
+* Animated Collapsible DIV v2.4- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+animatedcollapse.addDiv('hdr2', 'fade=0,speed=400,height=1028px')
+
+animatedcollapse.ontoggle=function($, divobj, state){ //fires each time a DIV is expanded/contracted
+	//$: Access to jQuery
+	//divobj: DOM reference to DIV being expanded/ collapsed. Use "divobj.id" to get its ID
+	//state: "block" or "none", depending on state
+}
+
+animatedcollapse.init()
+
+</script>
+<STYLE>
+p.hdr {		color:#737373;	font-size:13pt;}
+body,html {	height:100%;	background:#E5F7FD;	margin:0;	padding:0;	color:#000;	}
+#nav {  border-right-width:1px;	border-right-style:solid;	border-right-color:black;
+	background:#00B0F0;	color:#E8EEFD;	float:left; 	top:0px;	width:160px;
+	min-height: 100%; height:100%;	margin:0;	padding:0px;	left:0px; margin-bottom:-200px;}
+#main { position: absolute;	top:0px;	margin:0px;	left:161px;	height:120px;
+	width:866px;	padding:0px;	border:0px; background:red;}
+
+#hdr{ 
+
+	float:top;	top:0px;	margin:0px;	left:161px;	height:120px;
+	width:866px;	padding:0px;	border:0px;}
+#hdr2{ 
+
+	float:top;	top:120px;	margin:0px;	left:161px;	height:120px;
+	width:866px;	padding:0px;	border:0px; }
+
+#ppane{	
+	border-top-width:1px;	border-top-style:solid;	border-top-color:black;	border-right-width:1px;
+	border-right-style:solid; border-right-color:black;	float:top;	top:120px;
+	height:128px;	margin:0px;	left:162px;	width:865px;	padding:0px;	background:white;}
+
+#ppane_w {
+	border-top-width:1px;	border-top-style:solid;	border-top-color:black;	border-right-width:1px;
+	border-right-style:solid;	border-right-color:black;	border-bottom-width:1px;	border-bottom-style:solid;
+	border-bottom-color:black;	float:top;	top:248px;	height:14px;	margin:0px;	left:161px;
+	width:866px;	padding:0px;	background:#004873;}
+
+#util { 
+	position: absolute;	top:258px;	margin:0px;	left:161px;	width:866px;	padding:0px;
+}
+
+#util input[type="text"]:focus, #util textarea:focus
+{
+    background-image: url( './images/input_gradient2.bmp' );
+    border: solid 1px #33677F;
+}
+
+#util input[type="text"], #inputArea textarea, select[type="text"]
+{
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    margin-bottom: 5px;
+    margin-right: 11px;
+    display: block;
+    padding: 2	px;
+    border: solid 1px #6887BB;
+    width: 160px;
+    background-image: url( './images/input_gradient1.bmp' );
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+table, td, th, tr{padding:0;border-spacing:0;color:white;font-family: calibri, Arial, sans-serif;font-size:14pt;}
+td.nav_top{							padding-left:30px;}
+td.nav_off{	background: url("./images/nav_bullet_off.bmp");	padding-left:46px;	color:white;}
+td.nav_on{	background: url("./images/nav_bullet_on.bmp");	padding-left:46px;	color:#FFDDEE;}
+td.nav_lof{	background: url("./images/nav_blast_off.bmp");	padding-left:46px;	color:white;}
+td.nav_lon{	background: url("./images/nav_blast_on.bmp");	padding-left:46px;	color:#FFDDEE;}
+td.res_off{	background: url("./images/nav_res_off.bmp"); 	padding-left:26px;	padding-top:10px;}
+td.res_on{	background: url("./images/nav_res_on.bmp");	padding-left:26px;	padding-top:10px;}
+td.nav_oth_off {						padding-bottom:10px; 	text-align:center;	color:white;}
+td.nav_oth_on {							padding-bottom:10px;	text-align:center;	color:#FFDDEE;}
+td.hdr_top{	color:#0070C0;}
+td.ppn{		background:white;	color:navy;}
+td.border{	background: url("./images/border_pixel.bmp");	}
+td.hdr_line{	background: url("./images/hdr_line.bmp");	}
+td.display {    padding-left:10px; padding-right:10px;}
+td.ppn_title{	background:#004873; 	font-size:8pt;		text-align:center;}
+td.util_hdr {   color:#0070C0; font-size:14pt; font-weight:bold; text-align:center; width:120px;}
+td.util_lbl {   color:#737373; font-size:11pt; width:150px; height:20px;}
+td.util_pic {   text-align:center; padding-top:10px;}
+td.algn_top {   vertical-align:top;} 
+</STYLE>
+</head>
+<body>
+
+
+<div id ="nav">
+	<table class="nav_tab" height=100% width=158>
+	<tr><td ><img src="./images/logo.bmp" width=157 height=113></td></tr>
+	<tr><td ><img src="./images/logo_footer.bmp" width=157 height=53></td></tr>
+	<tr><td class="nav_oth_off" onmouseover="this.className='nav_oth_on'" onmouseout="this.className='nav_oth_off'">Welcome!</td></tr>
+	<tr><td class="res_off" onmouseover="this.className='res_on'" onmouseout="this.className='res_off'">Your Resume</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Contact Info</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Objective</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Expertise</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Career</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'">Distinctions</td></tr>
+	<tr><td class="nav_lof" onmouseover="this.className='nav_lon'" onmouseout="this.className='nav_lof'">Keywords</td></tr>
+	<tr height=100%><td>&nbsp;<br></td></tr>
+	<tr><td><img src="./images/nav_footer.bmp" width=157 height=11></td></tr>
+	<tr><td class="nav_oth_off" onmouseover="this.className='nav_oth_on'" onmouseout="this.className='nav_oth_off'">About the Site</td></tr>
+	</table>
+</div>
+<div id="main" align="left>
+  <div id ="hdr" align="left">
+	<table border=0 height=100% width=100%>
+	<tr height=42>
+	<td width=40 class="hdr_line"></td>
+	<td width=280 class="hdr_line"><img src="./images/hdr_contact_info.bmp"></td>
+	<td width=546 class="hdr_line"></td>
+	</tr>
+	<tr height=100%><td class="display" colspan=3 width=100%>
+		<p class="hdr">This section is a breeze.  Just put in the information you’d like available on your resume.   If there’s any information you don’t want on your resume, just don’t fill it in!&nbsp;&nbsp;Oh, and if you can import the data, you’ll be 80% done with your entire resume in about 10 seconds.</p>
+	</td></tr>
+	</table>
+  </div>
+  <div id="hdr2" align="left">
+  	testing!
+  </div>
+  <div id ="ppane" align="left"><a href="javascript:animatedcollapse.show('hdr2')">Slide Down</a> || <a href="javascript:animatedcollapse.hide('hdr2')">Slide Up</a></div>
+  <div id ="ppane_w" align="PREV">
+  	<table class="util" width=866>
+	<tr><td class="ppn_title" width=50%>PREVIEW PANE</td><td class="ppn_title" width=50%>PREVIEW PANE</td></tr>
+	</table>
+  </div>
+  <div id ="util" align="PREV">
+  <br>
+  <table>
+			<tr><td class="util_hdr" rowspan=2>Import</td>
+			    <td class="util_lbl">site</td>
+			    <td colspan=3></td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td class="algn_top"><img src="images/cmd_import.bmp"></td>
+			    <td colspan=2></td></tr>
+			<tr><td class="util_hdr"  rowspan=2>Email</td>
+			    <td class="util_lbl">address</td>
+			    <td class="util_lbl">password</td>
+			    <td colspan=2></td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td colspan=2></td></tr>
+			<tr><td class="util_hdr"  rowspan=2>Name</td>
+			    <td class="util_lbl">first</td>
+			    <td class="util_lbl">middle</td>
+			    <td class="util_lbl">last</td>
+			    <td></td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td></td></tr>
+
+			<tr><td class="util_hdr"  rowspan=2>Address</td>
+			    <td class="util_lbl">street</td>
+			    <td class="util_lbl">city/town</td>
+			    <td class="util_lbl">state/province</td>
+			    <td class="util_lbl">zip/postal code</td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td></tr>
+			<tr><td class="util_hdr"  rowspan=2>Phone</td>
+			    <td class="util_lbl">phone 1</td>
+			    <td class="util_lbl">number 1</td>
+			    <td class="util_lbl">phone 2</td>
+			    <td class="util_lbl">number 2</td></tr>
+			<tr><td>
+				<select name="phone1" id="phone1" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">Home</option>
+            			    <option value="2" class="">Work</option>
+            			    <option value="3" class="">Mobile</option>
+			        </select></td>
+			    <td><input type="text" name="q"></td>
+			    <td><select name="phone1" id="phone1" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">Home</option>
+            			    <option value="2" class="">Work</option>
+            			    <option value="3" class="">Mobile</option>
+			        </select></td>
+			    <td><input type="text" name="q"></td></tr>
+
+			<tr><td class="util_hdr" rowspan=5>Other Stuff</td>
+			    <td rowspan=5><img width=135 height=130 src="data/photos/akabret-1.jpg"></td>
+			    <td rowspan=2><img src="images/cmd_upload.bmp"></td>
+			    <td class="util_lbl">travel</td>
+			    <td rowspan=5></td></tr>
+			<tr><td>
+			        <select name="user_travel" id="trvl" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">None</option>
+            			    <option value="2" class="">A few trips a year</option>
+            			    <option value="3" class="">One trip a month</option>
+            			    <option value="4" class="">Several trips a month</option>
+            			    <option value="5" class="">Lots of travel</option>
+			        </select></td></tr>
+			<tr><td class="util_lbl">social media</td>
+			    <td class="util_lbl">ID</td></tr>
+			<tr><td><select name="user_travel" id="trvl" type="text" onchange="showValue(this.value)">
+            			    <option value="0"></option>
+            			    <option value="1">Facebook</option>
+            			    <option value="2">LinkedIn</option>
+            			    <option value="3">Skype</option>
+			        </select></td>
+			    <td><input type="text" name="q"></td></tr>
+			<tr><td colspan=2>&nbsp;</td></tr>
+			</table>
+
+  </div>
+</div>
+</body>
+</html>

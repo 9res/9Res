@@ -1,0 +1,223 @@
+﻿@model _9Res.Models.Objective
+
+@{
+    //Layout = null;
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("input:text, textarea, select").addClass("input_inactive");
+        $("input:text, textarea, select").focus(function () {
+            $(this).addClass("input_active_ob").removeClass("input_inactive_ob");
+        }).blur(function () {
+            $(this).removeClass("input_active_ob").addClass("input_inactive_ob");
+        });
+
+    });
+</script>
+
+<div id="main" align="left">
+  @using (Html.BeginForm())
+  {
+        @Html.ValidationSummary(true)
+                <fieldset>
+
+  <div id ="hdr" align="left">
+	<table border=0 cellpadding=0 cellspacing=0 height=100% width=100%>
+	<tr height=42>
+	<td width=40 class="hdr_line"></td>
+	<td width=237 class="ob_title"></td>
+	<td width=493 class="hdr_line" align="right"></td>
+	<td width=96 class="hdr_info1" onclick="javascript:info_mouse_click(this)" onmouseover="javascript:info_mouse_over(this)" onmouseout="javascript:info_mouse_out(this)"></td>	
+	</tr>
+	<tr height=100%><td class="display" colspan=4 width=100%>
+	<table width=100%><tr><td class="hdr_txt">Your objective serves as a router: its job is to help your resume navigate to the people most interested in hiring you! It’s a concise 15-second elevator pitch, and it “speaks” very well.</td></tr>
+	</table>
+	</td></tr>
+	</table>
+  </div>
+  <div id="hdr2" align="left">	<table width=100%><tr><td class="hdr_txt">...In case you hadn't noticed, this site is cool as shit.</td></tr></table></div>
+  <div id ="ppane_obj" align="left"><table border=0 cellpadding=0 cellspacing=0 height=100% width=100%><tr><td id="obj_ppane" class="ob_dtl1"></td></tr></table></div>
+  <div id ="plain">
+  	<table cellpadding=0 cellspacing=0 class="util" width=100%>
+	<tr height=14><td class="ppn_title_left" width=327>OBJECTIVE LENGTH:</td>
+		<td class="ob_word" width=212>
+            <img height=1 id="trans_slider" src="@Url.Content("~/Content/images/spacer.gif")">
+            <img height=14 id="slide_tab" src="@Url.Content("~/Content/images/word_slide_tab.bmp")"></td>
+		<td id="word_res" class="ppn_title_right" width=327></td></tr>
+	</table>
+  </div>
+  <div id ="util">
+  <table cellpadding=0 cellspacing=0 width="100%">
+  <tr><td colspan=1 class="ob_txt1">Tell us about...</td></tr>
+  <tr><td colspan=1 class="ob_txt2">...yourself</td></tr>
+  <tr><td class="ob_txt3">What adjective(s) best describe you?</td>
+      <td>
+      <!-- <input type="text" name="q" id="txt_O_User_Adj1_P" onkeyup="javascript:updObjective();" onblur="javascript:evalWord();" /> -->
+        @Html.TextBoxFor(model => model.obj_user_adj1, new { @id = "txt_O_User_Adj1_P", @onkeyup = "javascript:updObjective();", @onblur = "javascript:evalWord();" })
+        @Html.ValidationMessageFor(model => model.obj_user_adj1)
+      </td>
+      <td>
+      <!-- <input type="text" name="q" id="txt_O_User_Adj2_P" onkeyup="javascript:updObjective();" onblur="javascript:evalWord();" /> --> 
+        @Html.TextBoxFor(model => model.obj_user_adj2, new { @id = "txt_O_User_Adj2_P", @onkeyup = "javascript:updObjective();", @onblur = "javascript:evalWord();" })
+        @Html.ValidationMessageFor(model => model.obj_user_adj1)
+      </td></tr>
+  <tr><td class="ob_txt3">What is a title that best describes you?</td>
+      <td colspan=2>
+      <!-- <input type="text" name="q" id="txt_O_User_Noun" onkeyup="javascript:updObjective();" onblur="javascript:evalWord();"/> -->
+        @Html.TextBoxFor(model => model.obj_user_title, new { @id = "txt_O_User_Noun", @onkeyup = "javascript:updObjective();", @onblur = "javascript:evalWord();" })
+        @Html.ValidationMessageFor(model => model.obj_user_title)
+      </td></tr>
+
+  <tr><td colspan=1 class="ob_txt2">...your ideal job</td></tr>
+  <tr><td class="ob_txt3">What type of work are you looking for?</td>
+      <td>
+<!--      <select id="ddl_O_Job_Type_P" type="text" onchange="javascript:updObjective();evalWord();">
+		<option value="" class=""><Unspecified></option>
+		<option value="full-time" class="">Full-Time</option>
+            	<option value="part-time" class="">Part-Time</option>
+            	<option value="contract" class="">Contract</option>
+            	<option value="tenure track" class="">Tenure Track</option>				
+	   </select>
+       -->
+@{
+        var options2 = new List<SelectListItem>();
+        options2.Add(new SelectListItem { Value = "unspecified", Text = "" });
+        options2.Add(new SelectListItem { Value = "full", Text = "Full-Time" });
+        options2.Add(new SelectListItem { Value = "part", Text = "Part-Time" });
+        options2.Add(new SelectListItem { Value = "contract", Text = "Contract" });
+        options2.Add(new SelectListItem { Value = "tenure", Text = "Tenure Track" });
+} 
+        @Html.DropDownListFor(model => model.obj_jobType, @options2, new { @id = "ddl_O_Job_Type_P", @type ="text", @onchange = "javascript:updobjective(); evalWord();" })      
+      
+      
+
+       </td>
+    <td><input type="text" name="q" id="txt_O_Job_Type_P" onkeyup="javascript:updObjective();"  onblur="javascript:evalWord();"/></td>
+   </tr>
+  <tr><td class="ob_txt3">What skills would you like to use on the job?</td>
+      <td>
+      <!-- <input type="text" name="q" id="txt_O_Job_Adj1_P" onkeyup="javascript:updObjective();" onblur="javascript:evalWord();" /> -->
+        @Html.TextBoxFor(model => model.obj_user_skills1, new { @id = "txt_O_Job_Adj1_P", @onkeyup = "javascript:updObjective();", @onblur = "javascript:evalWord();" })
+        @Html.ValidationMessageFor(model => model.obj_user_skills1)
+      </td>
+      <td>
+      <!-- <input type="text" name="q" id="txt_O_Job_Adj2_P" onkeyup="javascript:updObjective();" onblur="javascript:evalWord();"/> -->
+        @Html.TextBoxFor(model => model.obj_user_skills2, new { @id = "txt_O_Job_Adj2_P", @onkeyup = "javascript:updObjective();", @onblur = "javascript:evalWord();" })
+        @Html.ValidationMessageFor(model => model.obj_user_skills2)
+      </td></tr>
+
+  <tr><td colspan=1 class="ob_txt2">...your ideal company</td></tr>
+  <tr><td class="ob_txt3">What type of place would you like to work?</td>
+      <td colspan=2>
+      
+@{
+        var options = new List<SelectListItem>();
+        options.Add(new SelectListItem { Value = "firm", Text = "" });
+        options.Add(new SelectListItem { Value = "startup", Text = "Startup" });
+        options.Add(new SelectListItem { Value = "nonprofit", Text = "Non-Profit" });
+        options.Add(new SelectListItem { Value = "notforprofit", Text = "Not-For-Profit" });
+        options.Add(new SelectListItem { Value = "hospital", Text = "Hospital" });
+        options.Add(new SelectListItem { Value = "practice", Text = "Practice" });
+        options.Add(new SelectListItem { Value = "organization", Text = "Organization" });
+        options.Add(new SelectListItem { Value = "institute", Text = "Institute" });
+        options.Add(new SelectListItem { Value = "thinktank", Text = "Think Tank" });
+        options.Add(new SelectListItem { Value = "university", Text = "University" });
+        options.Add(new SelectListItem { Value = "school", Text = "School" });
+        options.Add(new SelectListItem { Value = "multinational", Text = "Multi-National" });        
+} 
+        @Html.DropDownListFor(model => model.obj_companyType, @options, new { @id = "ddl_O_Comp_Type_P", @type = "text", @onchange = "javascript:updobjective(); evalWord();" })
+        </td></tr>
+  <tr><td class="ob_txt3">In what industries would you like to work?</td>
+      <td>
+      <!-- <input id="txt_O_Industry1"  type="text" onkeyup="javascript:updObjective();" onblur="javascript:evalWord();" /> -->
+        @Html.TextBoxFor(model => model.obj_user_industry1, new { @id = "txt_O_Industry1", @onkeyup = "javascript:updObjective();", @onblur = "javascript:evalWord();" })
+        @Html.ValidationMessageFor(model => model.obj_user_industry1)
+      </td>
+	  <td>
+      <!-- <input id="txt_O_Industry2"  type="text" onkeyup="javascript:updObjective(); " onblur="javascript:evalWord();" /> -->
+        @Html.TextBoxFor(model => model.obj_user_industry2, new { @id = "txt_O_Industry2", @onkeyup = "javascript:updObjective();", @onblur = "javascript:evalWord();" })
+        @Html.ValidationMessageFor(model => model.obj_user_industry2)
+      </td></tr>
+  <tr><td class="ob_txt3">What adjectives describe your ideal company?</td>
+      <td>
+      <!-- <input type="text" name="q" id="txt_O_Comp_Adj1_P" onkeyup="javascript:updObjective();" onblur="javascript:evalWord();" /> -->
+        @Html.TextBoxFor(model => model.obj_user_job_adj1, new { @id = "txt_O_Comp_Adj1_P", @onkeyup = "javascript:updObjective();", @onblur = "javascript:evalWord();" })
+        @Html.ValidationMessageFor(model => model.obj_user_job_adj1)
+      </td>
+      <td>
+      <!-- <input type="text" name="q" id="txt_O_Comp_Adj2_P" onkeyup="javascript:updObjective();" onblur="javascript:evalWord();" /> -->
+        @Html.TextBoxFor(model => model.obj_user_job_adj2, new { @id = "txt_O_Comp_Adj2_P", @onkeyup = "javascript:updObjective();", @onblur = "javascript:evalWord();" })
+        @Html.ValidationMessageFor(model => model.obj_user_job_adj2)
+      </td></tr>
+  <tr><td colspan=1 class="ob_txt2">...other stuff</td></tr>
+  <tr><td class="ob_txt3">Choose a few action phrases:</td>
+      <td>
+      <!-- 
+      <select id="O_phrase1" type="text" onchange="javascript:updObjective();evalWord();">
+		<option value="seeks" class="">seeks</option>
+            	<option value="looking for" class="">looking for</option>
+            	<option value="desires" class="">desires</option>
+	   </select>
+       -->
+        @{
+        var phrase1 = new List<SelectListItem>();
+        phrase1.Add(new SelectListItem { Value = "seeks", Text = "seeks" });
+        phrase1.Add(new SelectListItem { Value = "desires", Text = "desires" });
+        phrase1.Add(new SelectListItem { Value = "looking for", Text = "looking for" });
+        } 
+        @Html.DropDownListFor(model => model.obj_actionPhrase1, @phrase1, new { @id = "O_phrase1", @type = "text", @onchange = "javascript:updobjective(); evalWord();" })
+
+       </td>
+      <td>
+    <!--
+       <select id="O_phrase2" type="text" onchange="javascript:updObjective();evalWord();">
+				<option value="where I can leverage my">where I can leverage my</option>
+            	<option value="where I can apply my">where I can apply my</option>
+            	<option value="where I can improve my">where I can improve my</option>
+	   </select>
+       -->
+      @{
+        var phrase2 = new List<SelectListItem>();
+        phrase2.Add(new SelectListItem { Value = "leverage ", Text = "leverage" });
+        phrase2.Add(new SelectListItem { Value = "apply ", Text = "apply" });
+        phrase2.Add(new SelectListItem { Value = "improve ", Text = "improve" });
+        } 
+        @Html.DropDownListFor(model => model.obj_actionPhrase2, @phrase2, new { @id = "O_phrase2", @type = "text", @onchange = "javascript:updobjective(); evalWord();" })
+
+</td></tr>
+	</table>
+<br>
+    <center> <input type="button" id="btnPrevious" value="<---Previous" onclick="/Account/contactinfo" /> 
+             <input type="submit" value="Next! --->" /> </center>
+
+  </div> 
+  </fieldset>
+  }
+
+  <div id="peek_hdr">
+  <table width="100%"><tr>
+    <td class="hdr_peek0">Other people have said...</td>
+    <td class="hdr_peek1" onmouseover="this.className='hdr_peek2'" onmouseout="this.className='hdr_peek1'"></td></tr>
+   </tr>
+  </table>
+  </div>
+  
+  <div id="ob_peek_dtl"><table height=100%><tr height=100%>
+	<td class="ob_txt3">Ambitious, results-oriented software engineer seeks a full-time position at a socially-responsible biotech or technology firm, where I can leverage my web development and interpersonal skills.
+	</td></tr></table>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+    updObjective();
+    evalWord();
+    $(document).ready(function () {
+        $('#ddl_O_Comp_Type_P').selectbox();
+        $('#ddl_O_Job_Type_P').selectbox();
+        $('#O_phrase1').selectbox();
+        $('#O_phrase2').selectbox();
+    });
+
+</script>

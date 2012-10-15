@@ -1,0 +1,200 @@
+﻿@model _9Res.Models.Expertise
+
+@{
+    //Layout = null;
+}
+
+<div id="main" align="left">
+  @using (Html.BeginForm())
+  {
+        @Html.ValidationSummary(true)
+                <fieldset>
+
+  <div id ="hdr" align="left">
+	<table cellpadding=0 cellspacing=0 border=0 height=100% width=100%>
+	<tr height=42>
+		<td width=40 class="hdr_line"></td>
+		<td width=136 class="ex_title"></td>
+		<td width=590 class="hdr_line" align="right"></td>
+		<td width=96 class="hdr_info1" onclick="javascript:info_mouse_click(this)" onmouseover="javascript:info_mouse_over(this)" onmouseout="javascript:info_mouse_out(this)"></td>	
+	</tr>
+	<tr height=100%><td class="display" colspan=4 width=100%>
+		<table width=100%><tr><td class="hdr_txt">List the areas in which you can really make an impact! </td></tr></table>
+	</td></tr>
+	</table>
+  </div>
+  <div id="hdr2" align="left">	<table width=100%><tr><td class="hdr_txt"></td></tr></table>
+  </div>
+  <div id ="ppane_ex" align="left">
+</div>
+  <div id ="ex_ppane_footer">
+	<table cellpadding=0 cellspacing=0 class="util" border=0 width=866>
+	<tr><td class="ppn_title" width=50%>PREVIEW PANE</td>
+		<td class="ppn_title" width=50%>PREVIEW PANE</td>	
+		</tr>
+	</table>
+	
+  </div>
+  <div id ="util_exp">
+  <table width="100%">
+<!--	<tr><td colspan=5 class="header12">Tell us about...</td></tr> -->
+
+	<tr><td colspan=5 class="header4">List and describe your mad skillz:</td></tr>
+	<tr><td colspan=2 class="ex_txt1">Move</td>
+		<td class="ex_txt2">Expertise Title</td>
+		<td class="ex_txt3">Description (or List)</td>
+		<td class="ex_txt4">Private</td>
+		<td class="ex_txt5"></td></tr>
+	<tr class="exp_general">	
+	<td id="sort_up1"   class="ex_sortup_null" onmouseover='javascript:sort_mouse_event(1,"up","over")' onmouseout='sort_mouse_event(1,"up","out")' onclick="javascript:sortExpt(1,1)"></td>
+	<td id="sort_down1" class="ex_sortdown_null" onmouseover='javascript:sort_mouse_event(1,"down","over")' onmouseout='sort_mouse_event(1,"down","out")' onclick="javascript:sortExp(1,-1)"></td>
+	<td class="ex_txt2">
+    <!-- <input type="text" name="q" id="txt_exp1_title" onkeyup="javascript:updExpertise();" /> -->
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.expertise_1_title, new { @id = "txt_exp1_title", @onkeyup = "javascript:updExpertise();" })
+                @Html.ValidationMessageFor(model => model.expertise_1_title)
+            </div>
+    </td>
+	<td class="ex_txt3">
+        <!-- <textarea onfocus="javascript:this.style.height='80px'" onblur="javascript:this.style.height='20px'"  onkeyup="javascript:updExpertise();" id="exp_desc1"></textarea> -->
+        @Html.TextAreaFor(model => model.expertise_1_desc, new { @id = "exp_desc1", @onkeyup = "javascript:updExpertise();", @onblur = "javascript:this.style.height='20px'", @onfocus = "javascript:this.style.height='80px'" })
+        @Html.ValidationMessageFor(model => model.expertise_1_desc)
+        
+        </td> 
+        	<td class="ex_txt4">
+            <!-- <input type="checkbox" id="chk_exp1_priv" onclick="javascript:updExpertise();" type="text" /> -->
+        @Html.CheckBoxFor(model => model.expertise_1_priv, new { @id = "chk_exp1_priv", @onclick = "javascript:updExpertise();" })
+        </td>
+	<td class="ex_txt5">&nbsp;</td>
+	</tr>
+	<tr class="exp_general">	
+	<td id="sort_up2"   class="ex_sortup_null" onmouseover='javascript:sort_mouse_event(2,"up","over")' onmouseout='sort_mouse_event(2,"up","out")' onclick="javascript:sortExp(2,1)"></td>
+	<td id="sort_down2" class="ex_sortdown_null" onmouseover='javascript:sort_mouse_event(2,"down","over")' onmouseout='sort_mouse_event(2,"down","out")' onclick="javascript:sortExp(2,-1)"></td>
+	<td class="ex_txt2">
+    <!-- <input type="text" name="q" id="txt_exp2_title" onkeyup="javascript:updExpertise();" /> -->
+                @Html.TextBoxFor(model => model.expertise_2_title, new { @id = "txt_exp2_title", @onkeyup = "javascript:updExpertise();" })
+                @Html.ValidationMessageFor(model => model.expertise_2_title)
+    </td>
+	<td class="ex_txt3">
+    <!-- <textarea onfocus="javascript:this.style.height='80px'" onblur="javascript:this.style.height='20px'"  onkeyup="javascript:updExpertise();" id="exp_desc2"></textarea> -->
+    
+        @Html.TextAreaFor(model => model.expertise_2_desc, new { @id = "exp_desc2", @onkeyup = "javascript:updExpertise();", @onblur = "javascript:this.style.height='20px'", @onfocus = "javascript:this.style.height='80px'" })
+        @Html.ValidationMessageFor(model => model.expertise_2_desc)
+
+    </td>
+	<td class="ex_txt4">
+    <!-- <input type="checkbox" id="chk_exp2_priv" onclick="javascript:updExpertise();" type="text" /> -->
+        @Html.CheckBoxFor(model => model.expertise_2_priv, new { @id = "chk_exp2_priv", @onclick = "javascript:updExpertise();" })
+	</td>
+    <td class="ex_txt5">&nbsp;</td>
+	</tr>
+	<tr class="exp_general">	
+	<td id="sort_up3"   class="ex_sortup_null" onmouseover='javascript:sort_mouse_event(3,"up","over")' onmouseout='sort_mouse_event(3,"up","out")' onclick="javascript:sortExp(3,1)"></td>
+	<td id="sort_down3" class="ex_sortdown_null" onmouseover='javascript:sort_mouse_event(3,"down","over")' onmouseout='sort_mouse_event(3,"down","out")' onclick="javascript:sortExp(3,-1)"></td>
+	<td class="ex_txt2">
+        <!-- <input type="text" name="q" id="txt_exp3_title" onkeyup="javascript:updExpertise();" /> -->
+        @Html.TextBoxFor(model => model.expertise_3_title, new { @id = "txt_exp3_title", @onkeyup = "javascript:updExpertise();" })
+        @Html.ValidationMessageFor(model => model.expertise_3_title)
+    </td>
+	<td class="ex_txt3">
+    <!-- <textarea onfocus="javascript:this.style.height='80px'" onblur="javascript:this.style.height='20px'" onkeyup="javascript:updExpertise();" id="exp_desc3"></textarea> -->
+        @Html.TextAreaFor(model => model.expertise_3_desc, new { @id = "exp_desc3", @onkeyup = "javascript:updExpertise();", @onblur = "javascript:this.style.height='20px'", @onfocus = "javascript:this.style.height='80px'" })
+        @Html.ValidationMessageFor(model => model.expertise_3_desc)
+</td>
+	<td class="ex_txt4">
+        <!-- <input type="checkbox" id="chk_exp3_priv" onclick="javascript:updExpertise();" type="text" /> -->
+        @Html.CheckBoxFor(model => model.expertise_3_priv, new { @id = "chk_exp3_priv", @onclick = "javascript:updExpertise();" })
+	</td>
+
+	<td class="ex_txt5">&nbsp;</td>
+	</tr>
+	<tr class="exp_general">	
+	<td id="sort_up4"   class="ex_sortup_null" onmouseover='javascript:sort_mouse_event(4,"up","over")' onmouseout='sort_mouse_event(4,"up","out")' onclick="javascript:sortExp(4,1)"></td>
+	<td id="sort_down4" class="ex_sortdown_null" onmouseover='javascript:sort_mouse_event(4,"down","over")' onmouseout='sort_mouse_event(4,"down","out")' onclick="javascript:sortExp(4,-1)"></td>
+	<td class="ex_txt2">
+            <!-- <input type="text" name="q" id="txt_exp4_title" onkeyup="javascript:updExpertise();" /> -->
+         @Html.TextBoxFor(model => model.expertise_4_title, new { @id = "txt_exp4_title", @onkeyup = "javascript:updExpertise();" })
+         @Html.ValidationMessageFor(model => model.expertise_4_title)
+    </td>
+	<td class="ex_txt3">
+    <!-- <textarea onfocus="javascript:this.style.height='80px'" onblur="javascript:this.style.height='20px'" onkeyup="javascript:updExpertise();" id="exp_desc4"></textarea>-->
+        @Html.TextAreaFor(model => model.expertise_4_desc, new { @id = "exp_desc4", @onkeyup = "javascript:updExpertise();", @onblur = "javascript:this.style.height='20px'", @onfocus = "javascript:this.style.height='80px'" })
+        @Html.ValidationMessageFor(model => model.expertise_4_desc)
+    </td>
+	<td class="ex_txt4">
+        <!-- <input type="checkbox" id="chk_exp4_priv" onclick="javascript:updExpertise();" type="text" /> -->
+        @Html.CheckBoxFor(model => model.expertise_4_priv, new { @id = "chk_exp4_priv", @onclick = "javascript:updExpertise();" })
+	</td>
+
+	<td class="ex_txt5">&nbsp;</td>
+	</tr>
+	<tr class="exp_general">	
+	<td id="sort_up5"   class="ex_sortup_null" onmouseover='javascript:sort_mouse_event(5,"up","over")' onmouseout='sort_mouse_event(5,"up","out")' onclick="javascript:sortExp(5,1)"></td>
+	<td id="sort_down5" class="ex_sortdown_null" onmouseover='javascript:sort_mouse_event(5,"down","over")' onmouseout='sort_mouse_event(5,"down","out")' onclick="javascript:sortExp(5,-1)"></td>
+	<td class="ex_txt2">
+          <!-- <input type="text" name="q" id="txt_exp5_title" onkeyup="javascript:updExpertise();" /> -->
+        @Html.TextBoxFor(model => model.expertise_5_title, new { @id = "txt_exp5_title", @onkeyup = "javascript:updExpertise();" })
+        @Html.ValidationMessageFor(model => model.expertise_5_title)
+    </td>
+	<td class="ex_txt3">
+    <!-- <textarea onfocus="javascript:this.style.height='80px'" onblur="javascript:this.style.height='20px'" onkeyup="javascript:updExpertise();" id="exp_desc5"></textarea> -->
+        @Html.TextAreaFor(model => model.expertise_5_desc, new { @id = "exp_desc5", @onkeyup = "javascript:updExpertise();", @onblur = "javascript:this.style.height='20px'", @onfocus = "javascript:this.style.height='80px'" })
+        @Html.ValidationMessageFor(model => model.expertise_5_desc)
+</td>
+	<td class="ex_txt4">
+            <!-- <input type="checkbox" id="chk_exp5_priv" onclick="javascript:updExpertise();" type="text" /> -->
+        @Html.CheckBoxFor(model => model.expertise_5_priv, new { @id = "chk_exp5_priv", @onclick = "javascript:updExpertise();" })
+	</td>
+
+	<td class="ex_txt5">&nbsp;</td>
+	</tr>
+	<tr class="exp_general">	
+	<td id="sort_up6"  class="ex_sortup_null" onmouseover='javascript:sort_mouse_event(6,"up","over")' onmouseout='sort_mouse_event(6,"up","out")' onclick="javascript:sortExp(6,1)"></td>
+	<td id="sort_down6" class="ex_sortdown_null" onmouseover='javascript:sort_mouse_event(6,"down","over")' onmouseout='sort_mouse_event(6,"down","out")' onclick="javascript:sortExp(6,-1)"></td>
+	<td class="ex_txt2">
+        <!-- <input type="text" name="q" id="txt_exp6_title" onkeyup="javascript:updExpertise();" /> -->
+        @Html.TextBoxFor(model => model.expertise_6_title, new { @id = "txt_exp6_title", @onkeyup = "javascript:updExpertise();" })
+        @Html.ValidationMessageFor(model => model.expertise_6_title)
+    </td>
+	<td class="ex_txt3">
+    <!-- <textarea onfocus="javascript:this.style.height='80px'" onblur="javascript:this.style.height='20px'" onkeyup="javascript:updExpertise();" id="exp_desc6"></textarea> -->
+        @Html.TextAreaFor(model => model.expertise_6_desc, new { @id = "exp_desc6", @onkeyup = "javascript:updExpertise();", @onblur = "javascript:this.style.height='20px'", @onfocus = "javascript:this.style.height='80px'" })
+        @Html.ValidationMessageFor(model => model.expertise_6_desc)
+</td>
+	<td class="ex_txt4">
+            <!-- <input type="checkbox" id="chk_exp6_priv" onclick="javascript:updExpertise();" type="text" /> -->
+        @Html.CheckBoxFor(model => model.expertise_6_priv, new { @id = "chk_exp6_priv", @onclick = "javascript:updExpertise();" })
+	</td>
+
+
+	<td class="ex_txt5">&nbsp;</td>
+	</tr>
+	</table>
+      <div>
+
+@*      <input type="submit" value="<---Provious" />*@
+
+
+                <center> <input type="button" id="btnPrevious" value="<---Previous"/> 
+                <input type="submit" value="Next! --->" /> </center>
+            </div>
+  </div> 
+  
+        </fieldset>
+  }
+
+  <div id="peek_hdr">
+  <table width="100%"><tr>
+    <td class="hdr_peek0">Other people have said...</td>
+    <td class="hdr_peek1" onmouseover="this.className='hdr_peek2'" onmouseout="this.className='hdr_peek1'"></td></tr>
+   </tr>
+  </table>
+  </div>
+  <div id="ex_peek">
+</div>
+</div>
+
+
+<script>
+    exp_init();
+</script>

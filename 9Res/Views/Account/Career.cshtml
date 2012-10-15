@@ -1,0 +1,84 @@
+﻿@model _9Res.Models.Career
+@{    ViewBag.Title = "Career";}
+
+<h2>Career</h2>
+<title>9Res - Career</title>
+
+
+
+
+
+<div id="main" align="left">
+  <div id ="hdr" align="left">
+	<table border=0 cellpadding=0 cellspacing=0 height=100% width=100%>
+	<tr height=42>
+	<td width=40 class="hdr_line"></td>
+	<td width=100 class="cr_title"></td>
+	<td width=600 class="hdr_line" align="right"></td>
+	<td width=96 class="hdr_info1" onclick="javascript:info_mouse_click(this)" onmouseover="javascript:info_mouse_over(this)" onmouseout="javascript:info_mouse_out(this)"></td>	
+	</tr>
+	<tr cellpadding=0 cellheight=100%><td class="display" colspan=4 width=100%>
+	<table width=100%><tr><td class="hdr_txt">In this section, discuss all the great things you’ve done.and neat projects you’ve worked on!   Be sure to focus on what you helped to achieve, rather than just a literal description of what you did:  If you get too specific, people will just tune</td></tr></table>
+	</td></tr>
+	</table>
+  </div>
+  <div id="hdr2" align="left">	<table cellpadding=0 cellspacing=0 width=100%><tr><td class="hdr_txt">...In case you hadn't noticed, this site is cool as shit.</td></tr></table>
+  </div>
+  <div id ="ppane_car" align="left">
+  <table cellpadding=0 cellspacing=0 border=0 width=100%>  
+  <tr><td id="career_row1"></td></tr>
+  <tr><td id="career_row2"></td></tr>  
+  <tr><td id="career_row3"></td></tr>
+  <tr><td id="career_row4"></td></tr>
+  <tr class="tlr"><td id="job_tl" class="tl" width=100%></td></tr>
+  <tr class='tlr'><td width=100% class="tl" id="year_timeline" border=0></td></tr>
+</table>
+
+	</div>
+ <div id="popupContact"> </div>  
+    <div id="backgroundPopup"></div> 
+
+
+	<div id ="ppane_w" align="PREV">
+
+  	    <table cellpadding=0 cellspacing=0 class="util" border=0 width=866>
+	        <tr>
+                <td class="ppn_title" width=529>PREVIEW PANE</td>
+		        <td class="ppn_title" width=10 align=left><input type="checkbox" id="chk_job_nums" onclick="javascript:display_jobs(' ');" value="show" type="text" /></td>
+		        <td class="cr_ppn_title1" width=80>Display Job #s</td>
+		        <td class="cr_ppn_title2" width=79>Jobs to Show:</td>
+		        <td class="ppn_title" width=19 id="jobs_to_show">12</td>
+		        <td class="ppn_up_off"  onmouseover="this.className='ppn_up_on'" onmouseout="this.className='ppn_up_off'" onclick="javascript:display_jobs('+');" width=19></td>		
+		        <td class="ppn_down_off"  onmouseover="this.className='ppn_down_on'" onmouseout="this.className='ppn_down_off'" onclick="javascript:display_jobs('-');" width=19></td>		
+		        <td class="cr_ppn_title2" width=20>&nbsp;</td>
+	        </tr>
+	    </table>
+        <table cellpadding=0 cellspacing=0 border=0 width="100%">
+        <tr>
+            <td></td>
+            <td colspan=3 class="cr_txt4"><a class="addjob" href="javascript:alert('hoo!');">
+            Add </a> or click on an existing job edit it.
+            </td>
+            <td></td>
+        </tr>
+    </table>
+  </div>
+
+  <div id ="util_cr" width=846>
+  </div> 
+                <center> <input type="button" id="btnPrevious" value="<---Previous"/> 
+                <input type="submit" value="Next! --->" /> </center>
+ 
+</div>
+
+
+<script>
+    jobArray = new Array();
+    jobDetails = new Array();
+    old_msg = "";
+    chk_msg = "";
+    display_jobs('');
+    set_cr_height();
+  
+</script>
+

@@ -1,0 +1,199 @@
+﻿@model _9Res.Models.Distinctions
+
+@{
+    ViewBag.Title = "Distinctions";
+}
+
+
+
+
+
+</head>
+<body>
+
+
+
+<div id="main" align="left">
+  <div id ="hdr" align="left">
+	<table cellpadding=0 cellspacing=0 border=0 height=100% width=100%>
+	<tr height=42>
+	<td width=40 class="hdr_line"></td>
+	<td width=163 class="ds_title"></td>
+	<td width=584 class="hdr_line" align="right"></td>
+	<td width=96 class="hdr_info1" onclick="javascript:info_mouse_click(this)" onmouseover="javascript:info_mouse_over(this)" onmouseout="javascript:info_mouse_out(this)"></td>	
+	</tr>
+	<tr height=100%><td class="display" colspan=4 width=100%>
+	<table width=100%><tr><td class="hdr_txt">Everybody has some sort of distinctions:  these could be degrees, awards, academic accomplishments, or just lifetime events.   And everybody should have some goals, too:  What you hope to accomplish in the future?  Do you want to</td></tr>
+	</table>
+	</td></tr>
+	</table>
+  </div>
+  <div id="hdr2" align="left">	<table width=100%><tr><td class="hdr_txt">...In case you hadn't noticed, this site is cool as shit.</td></tr></table>
+  </div>
+  <div id ="ppane_ds" align="left">
+  </div>
+  <div id ="ppane_w" align="PREV">
+  	<table cellpadding=0 cellspacing=0 class="util" width=866>
+	<tr><td class="ppn_title" width=50%>PREVIEW PANE</td><td class="ppn_title" width=50%>PREVIEW PANE</td></tr>
+	</table>
+  </div>
+  <div id ="ds_input">
+  @using (Html.BeginForm())
+  {
+        @Html.ValidationSummary(true)
+                <fieldset>
+
+  @{
+      var distOptions = new List<SelectListItem>();
+      distOptions.Add(new SelectListItem { Value = "Blank", Text = " " });
+      distOptions.Add(new SelectListItem { Value = "Degree", Text = "Degree" });
+      distOptions.Add(new SelectListItem { Value = "Certification", Text = "Certification" });
+      distOptions.Add(new SelectListItem { Value = "Language", Text = "Spoken Language" });
+      distOptions.Add(new SelectListItem { Value = "Academic", Text = "Academic" });
+      distOptions.Add(new SelectListItem { Value = "Personal", Text = "Personal" });
+      distOptions.Add(new SelectListItem { Value = "Other", Text = "Other" });
+} 
+
+  <table border=0 width="100%">
+<!--	<tr><td colspan=5 class="header12">Tell us about...</td></tr> -->
+
+	<tr><td colspan=5 class="header4">List a few of your distinctions</td></tr>
+	<tr><td colspan=2 class="ds_txt7">Move</td>
+		<td class="ds_txt3">Pending</td>
+		<td class="ds_txt4">Type</td>
+		<td class="ds_txt6">Distinction Line 1</td>
+		<td class="ds_txt6">Distinction Line 2</td>
+		<td class="ds_txt5">Private</td>
+	</tr>
+	<tr>
+	<td id="sort_up1"   class="ds_sortup_null" onmouseover='javascript:sort_mouse_event(1,"up","over")' onmouseout='sort_mouse_event(1,"up","out")' onclick="javascript:sortDist(1,1)"></td>
+	<td id="sort_down1" class="ds_sortdown_null" onmouseover='javascript:sort_mouse_event(1,"down","over")' onmouseout='sort_mouse_event(1,"down","out")' onclick="javascript:sortDist(1,-1)"></td>
+	<td class="ds_txt3"><input type="checkbox" id="chk_ds_exp1_pend" onclick="javascript:updDistinction();" type="text" /></td>
+	<td class="ds_txt4">@Html.DropDownListFor(model => model.distinction_1_type, @distOptions, new { @id = "opt_ds_exp1_type", @type = "text", @onchange = "javascript:updDistinction();" })</td>
+	<td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp1_line1" onkeyup="javascript:updDistinction();" /> -->
+        @Html.TextBoxFor(model => model.distinction_1_line1, new { @id = "txt_ds_exp1_line1", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_1_line1)
+    </td>
+	<td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp1_line2" onkeyup="javascript:updDistinction();" /></td> -->
+        @Html.TextBoxFor(model => model.distinction_1_line2, new { @id = "txt_ds_exp1_line2", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_1_line2)
+
+	<td class="ds_txt5"><input type="checkbox" id="chk_exp1_priv" onclick="javascript:updDistinction();" type="text" /></td>
+	</tr>
+	<tr>
+	<td id="sort_up2"   class="ds_sortup_null" onmouseover='javascript:sort_mouse_event(2,"up","over")' onmouseout='sort_mouse_event(2,"up","out")' onclick="javascript:sortDist(2,1)"></td>
+	<td id="sort_down2" class="ds_sortdown_null" onmouseover='javascript:sort_mouse_event(2,"down","over")' onmouseout='sort_mouse_event(2,"down","out")' onclick="javascript:sortDist(2,-1)"></td>
+	<td class="ds_txt3"><input type="checkbox" id="chk_ds_exp2_pend" onclick="javascript:updDistinction();"/></td>
+	<td class="ds_txt4">@Html.DropDownListFor(model => model.distinction_2_type, @distOptions, new { @id = "opt_ds_exp2_type", @type = "text", @onchange = "javascript:updDistinction();" })</td>
+    <td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp2_line1" onkeyup="javascript:updDistinction();" /> -->
+        @Html.TextBoxFor(model => model.distinction_2_line1, new { @id = "txt_ds_exp2_line1", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_2_line1)
+
+    </td>
+	<td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp2_line2" onkeyup="javascript:updDistinction();" /> -->
+        @Html.TextBoxFor(model => model.distinction_2_line2, new { @id = "txt_ds_exp2_line2", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_2_line2)
+
+    </td>
+	<td class="ds_txt5"><input type="checkbox" id="chk_exp2_priv" onclick="javascript:updDistinction();" type="text" /></td>
+	</tr>
+	<tr>
+	<td id="sort_up3"   class="ds_sortup_null" onmouseover='javascript:sort_mouse_event(3,"up","over")' onmouseout='sort_mouse_event(3,"up","out")' onclick="javascript:sortDist(3,1)"></td>
+	<td id="sort_down3" class="ds_sortdown_null" onmouseover='javascript:sort_mouse_event(3,"down","over")' onmouseout='sort_mouse_event(3,"down","out")' onclick="javascript:sortDist(3,-1)"></td>
+	<td class="ds_txt3"><input type="checkbox" id="chk_ds_exp3_pend" onclick="javascript:updDistinction();" type="text" /></td>
+	<td class="ds_txt4">@Html.DropDownListFor(model => model.distinction_3_type, @distOptions, new { @id = "opt_ds_exp3_type", @type = "text", @onchange = "javascript:updDistinction();" })</td>
+    <td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp3_line1" onkeyup="javascript:updDistinction();" /> -->
+        @Html.TextBoxFor(model => model.distinction_3_line1, new { @id = "txt_ds_exp3_line1", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_3_line1)
+    </td>
+	<td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp3_line2" onkeyup="javascript:updDistinction();" /> -->
+        @Html.TextBoxFor(model => model.distinction_3_line2, new { @id = "txt_ds_exp3_line2", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_3_line2)
+    </td>
+	<td class="ds_txt5"><input type="checkbox" id="chk_exp3_priv" onclick="javascript:updDistinction();" type="text" /></td>
+	</tr>
+	<tr>
+	<td id="sort_up4"   class="ds_sortup_null" onmouseover='javascript:sort_mouse_event(4,"up","over")' onmouseout='sort_mouse_event(4,"up","out")' onclick="javascript:sortDist(4,1)"></td>
+	<td id="sort_down4" class="ds_sortdown_null" onmouseover='javascript:sort_mouse_event(4,"down","over")' onmouseout='sort_mouse_event(4,"down","out")' onclick="javascript:sortDist(4,-1)"></td>
+	<td class="ds_txt3"><input type="checkbox" id="chk_ds_exp4_pend" onclick="javascript:updDistinction();" type="text" /></td>
+	<td class="ds_txt4">@Html.DropDownListFor(model => model.distinction_4_type, @distOptions, new { @id = "opt_ds_exp4_type", @type = "text", @onchange = "javascript:updDistinction();" })</td>
+	<td class="ds_txt6"> 
+    <!-- <input type="text" name="q" id="txt_ds_exp4_line1" onkeyup="javascript:updDistinction();" /> -->
+        @Html.TextBoxFor(model => model.distinction_4_line1, new { @id = "txt_ds_exp4_line1", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_4_line1)
+    </td>
+	<td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp4_line2" onkeyup="javascript:updDistinction();" /> -->
+        @Html.TextBoxFor(model => model.distinction_4_line2, new { @id = "txt_ds_exp4_line2", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_4_line2)
+    </td>
+	<td class="ds_txt5"><input type="checkbox" id="chk_exp4_priv" onclick="javascript:updDistinction();" type="text" /></td>
+	</tr>
+	<tr>
+	<td id="sort_up5"   class="ds_sortup_null" onmouseover='javascript:sort_mouse_event(5,"up","over")' onmouseout='sort_mouse_event(5,"up","out")' onclick="javascript:sortDist(5,1)"></td>
+	<td id="sort_down5" class="ds_sortdown_null" onmouseover='javascript:sort_mouse_event(5,"down","over")' onmouseout='sort_mouse_event(5,"down","out")' onclick="javascript:sortDist(5,-1)"></td>
+	<td class="ds_txt3"><input type="checkbox" id="chk_ds_exp5_pend" onclick="javascript:updDistinction();" type="text" /></td>
+	<td class="ds_txt4">@Html.DropDownListFor(model => model.distinction_5_type, @distOptions, new { @id = "opt_ds_exp5_type", @type = "text", @onchange = "javascript:updDistinction();" })</td>
+	<td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp5_line1"  onkeyup="javascript:updDistinction();"/> -->
+        @Html.TextBoxFor(model => model.distinction_5_line1, new { @id = "txt_ds_exp5_line1", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_5_line1)
+    </td>
+	<td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp5_line2"  onkeyup="javascript:updDistinction();"/> -->
+        @Html.TextBoxFor(model => model.distinction_5_line2, new { @id = "txt_ds_exp5_line2", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_5_line2)
+</td>
+	<td class="ds_txt5"><input type="checkbox" id="chk_exp5_priv" onclick="javascript:updDistinction();" type="text" /></td>
+	</tr>
+	<tr>
+	<td id="sort_up6"   class="ds_sortup_null" onmouseover='javascript:sort_mouse_event(6,"up","over")' onmouseout='sort_mouse_event(6,"up","out")' onclick="javascript:sortDist(6,1)"></td>
+	<td id="sort_down6" class="ds_sortdown_null" onmouseover='javascript:sort_mouse_event(6,"down","over")' onmouseout='sort_mouse_event(6,"down","out")' onclick="javascript:sortDist(6,-1)"></td>
+	<td class="ds_txt3"><input type="checkbox" id="chk_ds_exp6_pend" onkeyup="javascript:updDistinction();" onclick="" type="text" /></td>
+	<td class="ds_txt4">@Html.DropDownListFor(model => model.distinction_6_type, @distOptions, new { @id = "opt_ds_exp6_type", @type = "text", @onchange = "javascript:updDistinction();" })</td>
+	<td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp6_line1" onkeyup="javascript:updDistinction();" /> -->
+        @Html.TextBoxFor(model => model.distinction_6_line1, new { @id = "txt_ds_exp6_line1", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_6_line1)
+    </td>
+	<td class="ds_txt6">
+    <!-- <input type="text" name="q" id="txt_ds_exp6_line2" onkeyup="javascript:updDistinction();" /> -->
+        @Html.TextBoxFor(model => model.distinction_6_line2, new { @id = "txt_ds_exp6_line2", @onkeyup = "javascript:updDistinction();" })
+        @Html.ValidationMessageFor(model => model.distinction_6_line2)
+    </td>
+	<td class="ds_txt5"><input type="checkbox" id="chk_exp6_priv" onclick="javascript:updDistinction();" type="text" /></td>
+	</tr>
+	</table>
+    <br>
+    </fieldset>
+  }
+</div> 
+
+
+  <div id="peek_hdr">
+  <table width="100%"><tr>
+    <td class="hdr_peek0">Other people have said...</td>
+    <td class="hdr_peek1" onmouseover="this.className='hdr_peek2'" onmouseout="this.className='hdr_peek1'"></td></tr>
+   </tr>
+  </table>
+  </div>
+  <div id="ds_peek_dtl"><table height=100%><tr height=100%>
+	<td class="ds_txt">Ambitious, results-oriented software engineer seeks a full-time position at a socially-responsible biotech or technology firm, where I can leverage my web development and interpersonal skills.
+	</td></tr></table>
+</div>
+
+
+
+</div>
+</div>
+
+</body>
+<script type="text/javascript">
+    initPage();
+</script>
