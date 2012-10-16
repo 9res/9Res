@@ -1,0 +1,389 @@
+﻿@model _9Res.Models.ContactInfo
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<!--<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ContactInfo</title>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/images/9res-ie.css")" />
+<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="9res-ie.css" />
+<![endif]- ->
+
+
+</head>
+<body>-->
+
+<!-- Inserting the Ajax code base here -->
+
+
+
+
+<div id="main" align="left">
+
+<!--	<form name="ContactDetails" method="post" action="ContactInfo" target="_self">  -->
+
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+                <fieldset>
+
+	<div id ="hdr" align="left">    
+	<table border=0 cellpadding=0 cellspacing=0 height=100% width=100%>
+		<tr height=42>
+		<td width=40 class="hdr_line"></td>
+		<td width=280 class="ci_title"></td>
+		<td width=450 class="hdr_line" align="right"></td>
+		<td width=96 class="hdr_info1" onclick="javascript:info_mouse_click(this)" onmouseover="javascript:info_mouse_over(this)" onmouseout="javascript:info_mouse_out(this)"></td>	
+		</tr>
+		<tr height=100%><td class="display" colspan=4 width=100%>
+		<table width=100%>
+			<tr><td class="hdr_txt">This section is a breeze.  Just enter any information you'd like available on your resume (just leave out any details you don't want to show up).&nbsp;&nbsp;  You can even jump-start the process by importing your info from LinkedIn!</td></tr>
+		</table>
+		</td></tr>
+	</table>
+  </div>
+	<div id= "hdr2" align="left"><table width=100%><tr><td class="hdr_txt">...In case you hadn't noticed, this site is cool as shit.</td></tr></table>
+	</div>
+	<div id="ppane_ci" align="left"><table cellpadding=0 cellspacing=0 name="ci_hdr" height=100% width=100% border=0>
+		<tr><td class="ci_pic" id="ci_hdr_pic"></td><td width=100%>
+			<table cellpadding=0 cellspacing=0 border=0 width=100%>
+			<tr><td width=20 rowspan=4>&nbsp;</td>
+				<td class="ci_name" id="ci_name"></td>
+				<td width=20 rowspan=4>&nbsp;</td></tr>
+			<tr><td class="ci_hline" height=1></td></tr>
+			<tr><td class="ci_dtl1" id="ci_addr" height=1>&nbsp;</td></tr>
+			<tr><td name="ci_dtl2" id="ci_cont">
+				<table width=100%>
+				<tr><td class="ci_dtl2"></td>
+					<td class="ci_dtl2"></td>
+					<td class="ci_dtl2"></td></tr>
+				</table></td></tr>
+			</table></td>
+			<td class="ci_qr" id="ci_qrcode"></td></tr>
+		</table>  
+	</div>
+	<div id="plain">
+		<table border=0 width=100% cellpadding=0 cellspacing=0><tr>
+			<td class="ci_ppn_spacer"></td>
+			<td class="ci_ppn_chk"><input type="checkbox" id="chk_picture" onclick="checkPic();"></td>
+			<td class="ci_ppn_title1">Display My Picture</td>
+			<td class="ci_ppn_main" >PREVIEW PANE</td>
+			<td class="ci_ppn_chk"><input type="checkbox" id="chk_qrcode" onclick="checkQR();" value="show" type="text"></td>
+			<td class="ci_ppn_title2">Display QR Code</td>
+			</tr></table>
+	</div>
+	<div id ="util_car" align="PREV">
+	<br>
+
+
+
+
+
+
+	<table width=100% border=0>
+	<tr><td class="ci_txt1" rowspan=2>Name</td>
+	    <td class="ci_txt2">first</td>
+	    <td class="ci_txt2">middle</td>
+	    <td class="ci_txt2">last</td>
+	    <td></td></tr>
+	<tr><td>
+    <!-- <input type="text" name="q" id="txtU_Name_F" onkeyup="javascript:insertCharInHeader();"> -->
+    
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.firstName, new { @id = "txtU_Name_F", @onkeyup = "javascript:insertCharInHeader();" })
+                @Html.ValidationMessageFor(model => model.firstName)
+            </div>
+
+
+    </td>
+
+
+	    <td>
+<!-- <input type="text" name="q" id="txtU_Name_M" onkeyup="javascript:insertCharInHeader();"> -->
+                @Html.TextBoxFor(model => model.middleName, new { @id = "txtU_Name_M", @onkeyup = "javascript:insertCharInHeader();" })
+                @Html.ValidationMessageFor(model => model.middleName)
+
+        </td>
+	    <td>
+        
+<!--         <input type="text" name="q" id="txtU_Name_L" onkeyup="javascript:insertCharInHeader();"> -->
+                @Html.TextBoxFor(model => model.lastName, new { @id = "txtU_Name_L", @onkeyup = "javascript:insertCharInHeader();" })
+                @Html.ValidationMessageFor(model => model.lastName)
+
+        </td>
+	    <td></td></tr>
+
+
+
+
+	<tr><td class="ci_txt1"  rowspan=2>Address</td>
+	    <td class="ci_txt2">street</td>
+	    <td class="ci_txt2">city/town</td>
+	    <td class="ci_txt2">state/province</td>
+	    <td class="ci_txt2">zip/postal code</td></tr>
+
+	<tr>
+    
+    <td>
+<!--     <input type="text" name="q" id="txtU_Addr_Street" onkeyup="javascript:insertCharInHeader();">-->
+
+
+                @Html.TextBoxFor(model => model.Street, new { @id = "txtU_Addr_Street", @onkeyup = "javascript:insertCharInHeader();" })
+                @Html.ValidationMessageFor(model => model.Street)
+    </td>
+
+
+
+
+	    <td>
+<!--        <input type="text" name="q" id="txtU_Addr_Town" onkeyup="javascript:insertCharInHeader();"> -->
+
+
+                @Html.TextBoxFor(model => model.city, new { @id = "txtU_Addr_Town", @onkeyup = "javascript:insertCharInHeader();" })
+                @Html.ValidationMessageFor(model => model.city)
+
+
+        </td>
+
+
+
+	    <td>
+<!--        <input type="text" name="q" id="txtU_Addr_State" onkeyup="javascript:insertCharInHeader();"> -->
+
+
+                @Html.TextBoxFor(model => model.state, new { @id = "txtU_Addr_State", @onkeyup = "javascript:insertCharInHeader();" })
+                @Html.ValidationMessageFor(model => model.state)
+
+
+        </td> 
+
+
+
+
+	    <td>
+<!--        <input type="text" name="q" id="txtU_Addr_Code" onkeyup="javascript:insertCharInHeader();"> -->
+                @Html.TextBoxFor(model => model.zip, new { @id = "txtU_Addr_Code", @onkeyup = "javascript:insertCharInHeader();" })
+                @Html.ValidationMessageFor(model => model.zip)
+
+
+    
+    
+       </td></tr>
+
+
+
+
+	<tr><td class="ci_txt1"  rowspan=2>Phone</td>
+	    <td class="ci_txt2">phone 1</td>
+	    <td class="ci_txt2">number 1</td>
+	    <td class="ci_txt2">phone 2</td>
+	    <td class="ci_txt2">number 2</td></tr>
+
+
+	<tr><td>
+<!--    <select name="phone1" id="ddlU_Phone1_Type_P" type="text" onmouseup="javascript:insertCharInHeader();">
+				<option value="Home" selected="selected" class="">Home</option>
+				<option value="Work" class="">Work</option>
+				<option value="Mobile" class="">Mobile</option>
+                			</select>
+ -->
+
+@{
+        var options = new List<SelectListItem>();
+        options.Add(new SelectListItem { Value = "Home", Text = "Home" });
+        options.Add(new SelectListItem { Value = "Work", Text = "Work" });
+        options.Add(new SelectListItem { Value = "Mobile", Text = "Mobile" });
+
+} 
+           
+        @Html.DropDownListFor(model => model.phone1Type, @options, new { @id = "ddlU_Phone1_Type_P", @onkeyup = "javascript:insertCharInHeader();" })
+
+            
+            
+            
+            
+            </td>
+		<td>
+        
+<!--        <input type="text" name="q" id="txtU_Phone1_Number" onkeyup="javascript:insertCharInHeader();"> -->
+
+                @Html.TextBoxFor(model => model.phone1number, new { @id = "txtU_Phone1_Number", @onkeyup = "javascript:insertCharInHeader();" })
+                @Html.ValidationMessageFor(model => model.phone1number)
+        
+        
+        </td>
+
+
+
+
+		<td>
+        
+<!--        <select name="phone2" id="ddlU_Phone2_Type_P" type="text" onmouseup="javascript:insertCharInHeader();">
+				<option value="Home" class="">Home</option>
+				<option value="Work" class="" selected="selected">Work</option>
+				<option value="Mobile" class="">Mobile</option>
+			</select> -->
+                         
+            
+        @Html.DropDownListFor(model => model.phone2Type, @options, new { @id = "ddlU_Phone2_Type_P", @onkeyup = "javascript:insertCharInHeader();" })
+            
+        </td>
+
+
+
+
+
+
+		<td>
+        
+<!--        <input type="text" name="q" id="txtU_Phone2_Number" onkeyup="javascript:insertCharInHeader();"> -->
+        
+            @Html.TextBoxFor(model => model.phone2number, new { @id = "txtU_Phone2_Number", @onkeyup = "javascript:insertCharInHeader();" })
+            @Html.ValidationMessageFor(model => model.phone2number)
+        
+        
+        </td>
+        </tr>
+
+
+
+
+	<tr><td class="ci_txt1" rowspan=2>Online</td>
+	    <td class="ci_txt2">email</td>
+		<td class="ci_txt2">social media</td>
+		<td class="ci_txt2">ID</td>
+	    <td></td></tr>
+
+	<tr>
+    <td class="ci_txt22">
+
+
+<!--    <input type="text" name="q" id="txtU_Email_Address" onkeyup="javascript:insertCharInHeader();">  -->
+    
+            @Html.TextBoxFor(model => model.email, new { @id = "txtU_Email_Address", @onkeyup = "javascript:insertCharInHeader();" })
+            @Html.ValidationMessageFor(model => model.email)
+
+    
+    </td>
+
+
+
+
+	<td>
+    
+    
+<!--    <select name="SocialMedia" id="ddlU_Media_Type_P" type="text" onchange="showValue(this.value)" onmouseup="javascript:insertCharInHeader();">
+				<option value="Facebook">Facebook</option>
+				<option value="LinkedIn">LinkedIn</option>
+				<option value="Skype">Skype</option>
+				</select> -->
+                
+
+
+
+@{
+        var SocialOptions = new List<SelectListItem>();
+        SocialOptions.Add(new SelectListItem { Value = "Facebook", Text = "Facebook" });
+        SocialOptions.Add(new SelectListItem { Value = "LinkedIn", Text = "LinkedIn" });
+        SocialOptions.Add(new SelectListItem { Value = "Skype", Text = "Skype" });
+
+} 
+           
+        @Html.DropDownListFor(model => model.socialMedia, @SocialOptions, new { @id = "ddlU_Media_Type_P", @onkeyup = "javascript:insertCharInHeader();" })
+
+
+
+
+
+
+  
+    </td>
+	
+    
+    
+    
+    
+    
+    	<td>
+        
+        
+        
+        <input type="text" name="q" id="txtU_Media_Id" onkeyup="javascript:insertCharInHeader();">
+        
+        
+        
+        
+        
+        </td></tr> 
+	<tr></tr>
+	<tr><td class="ci_txt1"  rowspan=5>Photo</td>
+	    <td rowspan=5 id="ci_pic"><img id="img_photo_preview" height=135 height=130 src="@Url.Content("~/Content/images/akabret-1.jpg")"></td>
+		<td rowspan=5 colspan=2 class="ci_upload">
+        
+        
+        <input type="file" id="file" name="file" onChange="showPicPreview((this));"></td>
+
+
+
+		<td rowspan=5 colspan=2 class="ci_upload">&nbsp;</td></tr>
+	<tr></tr>
+	</table>
+
+
+
+
+
+
+  </div>
+
+              <div>
+                <center> <input type="submit" value="Next--->" /> </center>
+            </div>
+
+<!--</form>-->
+
+
+
+
+
+        </fieldset>
+    }
+
+
+
+<!-- ------------ Form Ending ---------------- -->    
+
+
+  </div>
+
+        
+ </body>
+<script type="text/javascript">
+    insertCharInHeader();
+    checkPic();
+    checkQR();
+    $(document).ready(function () {
+        $('#ddlU_Phone1_Type_P').selectbox();
+        $('#ddlU_Phone2_Type_P').selectbox();
+        $('#ddlU_Media_Type_P').selectbox();
+        $('#file').customFileInput();
+    });
+	
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

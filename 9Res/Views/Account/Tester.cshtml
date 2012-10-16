@@ -1,0 +1,24 @@
+﻿@model _9Res.Models.Expertise
+
+@{
+    ViewBag.Title = "Tester";
+}
+
+<h2>Variable Tester</h2>
+
+<fieldset>
+    <legend>Expertise</legend>
+
+    Expertise 1: &nbsp;   @Html.DisplayFor(model => model.expertise_1_title) &nbsp;  @Html.DisplayFor(model => model.expertise_1_desc) &nbsp; @Html.DisplayFor(model => model.expertise_1_priv) <br />
+    Expertise 2: &nbsp;   @Html.DisplayFor(model => model.expertise_2_title) &nbsp;  @Html.DisplayFor(model => model.expertise_2_desc) &nbsp; @Html.DisplayFor(model => model.expertise_2_priv) <br />
+    Expertise 3: &nbsp;   @Html.DisplayFor(model => model.expertise_3_title) &nbsp;  @Html.DisplayFor(model => model.expertise_3_desc) &nbsp; @Html.DisplayFor(model => model.expertise_3_priv) <br />
+    Expertise 4: &nbsp;   @Html.DisplayFor(model => model.expertise_4_title) &nbsp;  @Html.DisplayFor(model => model.expertise_4_desc) &nbsp; @Html.DisplayFor(model => model.expertise_4_priv) <br />
+    Expertise 5: &nbsp;   @Html.DisplayFor(model => model.expertise_5_title) &nbsp;  @Html.DisplayFor(model => model.expertise_5_desc) &nbsp; @Html.DisplayFor(model => model.expertise_5_priv) <br />
+    Expertise 6: &nbsp;   @Html.DisplayFor(model => model.expertise_6_title) &nbsp;  @Html.DisplayFor(model => model.expertise_6_desc) &nbsp; @Html.DisplayFor(model => model.expertise_6_priv) <br />
+    <br />
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

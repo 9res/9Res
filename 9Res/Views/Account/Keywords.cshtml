@@ -1,0 +1,74 @@
+﻿@model _9Res.Models.Keywords
+@{  ViewBag.Title = "Keywords"; }
+
+<title>9Res - Keywords</title>
+
+<!DOCTYPE HTML>
+
+
+
+</head>
+<body>
+
+
+
+<div id="main" align="left">
+  <div id ="hdr" align="left">
+	<table border=0 cellspacing=0 cellpadding=0 height=100% width=100%>
+	<tr height=42>
+	<td width=40 class="hdr_line"></td>
+	<td width=151 class="kw_title"></td>
+	<td width=584 class="hdr_line" align="right"></td>
+	<td width=96 class="hdr_info1" onclick="javascript:info_mouse_click(this)" onmouseover="javascript:info_mouse_over(this)" onmouseout="javascript:info_mouse_out(this)"></td>	
+	</tr>
+	<tr height=100%><td class="display" colspan=4 width=100%>
+	<table width=100%><tr><td class="hdr_txt">Companies sometimes have systems that search through uploaded resumes.  If yours finds its way into one of these systems, you’ll want to make sure your it pops up on any relevant searches.  Below is a list of every word on...</td></tr>
+	</table>
+	</td></tr>
+	</table>
+  </div>
+  <div id="hdr2" align="left">	<table width=100%><tr><td class="hdr_txt">...In case you hadn't noticed, this site is cool as shit.</td></tr></table>
+  </div>
+  <div id ="ppane_kw" align="left">
+  </div>
+  <div id ="ppane_dist_footer" align="PREV">
+  	<table cellpadding=0 cellspacing=0 class="util" width=866>
+	<tr><td class="ppn_title" width=50%>PREVIEW PANE</td><td class="ppn_title" width=50%>PREVIEW PANE</td></tr>
+	</table>
+  </div>
+  <div id ="util_kw">
+    @using (Html.BeginForm())
+  {
+        @Html.ValidationSummary(true)
+                <fieldset>
+  <table border=0 width="100%">
+	<tr height=30><td class="kw_hdr_txt" width=366 >Search your resume for a word or phrase:</td>
+	<td class="kw_lbl" width=100><input type="text" id="txt_kwSearch" onkeyup="javascript:kwSearchParent(event.keyCode);"></td>
+	<td id="add_kw" width=200 class="kw_enterval" onclick="javascript:kwAdd();">&nbsp;</td>
+	<td width=200>&nbsp;</td>
+	</tr>
+	<tr><td class="kw_hdr_txt2">Keywords Added</td>
+	    <td class="kw_hdr_txt3" colspan=3 colspan=2></td></tr>
+	<tr><td colspan=4 class="kw_txt1">
+            @Html.TextAreaFor(model => model.keywords_list, new { @id = "bkw", @onblur = "javascript:kwClean();" })
+    </td></tr>
+	</table>
+
+    </fieldset>
+  }
+
+	<br>
+
+  </div> 
+ 
+
+
+</div>
+</div>
+
+</body>
+<script type="text/javascript">
+    initPage();
+</script>
+
+</html>
