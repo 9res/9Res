@@ -30,3 +30,11 @@ C:\cygwin\home\Uri\9Res\9Res.Tests\bin\Debug\9Res.pdb
 C:\cygwin\home\Uri\9Res\9Res.Tests\obj\Debug\9Res.Tests.csprojResolveAssemblyReference.cache
 C:\cygwin\home\Uri\9Res\9Res.Tests\obj\Debug\9Res.Tests.dll
 C:\cygwin\home\Uri\9Res\9Res.Tests\obj\Debug\9Res.Tests.pdb
+C:\cygwin\home\Uri\9Res_david_master\9Res.Tests\bin\Debug\9Res.Tests.dll.config
+C:\cygwin\home\Uri\9Res_david_master\9Res.Tests\bin\Debug\9Res.Tests.dll
+C:\cygwin\home\Uri\9Res_david_master\9Res.Tests\bin\Debug\9Res.Tests.pdb
+C:\cygwin\home\Uri\9Res_david_master\9Res.Tests\bin\Debug\9Res.dll
+C:\cygwin\home\Uri\9Res_david_master\9Res.Tests\bin\Debug\9Res.pdb
+C:\cygwin\home\Uri\9Res_david_master\9Res.Tests\obj\Debug\9Res.Tests.csprojResolveAssemblyReference.cache
+C:\cygwin\home\Uri\9Res_david_master\9Res.Tests\obj\Debug\9Res.Tests.dll
+C:\cygwin\home\Uri\9Res_david_master\9Res.Tests\obj\Debug\9Res.Tests.pdb
