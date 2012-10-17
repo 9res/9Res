@@ -100,7 +100,7 @@
 	#ob_peek_dtl{ border-top-width:1px;	border-top-style:solid;	border-top-color:black;	border-right-width:1px;
 				border-right-style:solid;	border-right-color:black;	border-bottom-width:1px;	border-bottom-style:solid;
 				border-bottom-color:black;	float:top;		height:80px;	margin:0px;	left:161px;
-				width:866px;	padding:0px;	background-image: url('Content/images/peek_gradient1.bmp');}
+				width:866px;	padding:0px;	background-image: url('/Content/images/peek_gradient1.bmp');}
 
 				
 /* DISTINCTIONS ------------------------------------------------------------------------ */
@@ -135,7 +135,7 @@
 	#ds_peek_dtl{ border-top-width:1px;	border-top-style:solid;	border-top-color:black;	border-right-width:1px;
 				border-right-style:solid;	border-right-color:black;	border-bottom-width:1px;	border-bottom-style:solid;
 				border-bottom-color:black;	float:top;		height:80px;	margin:0px;	left:161px;
-				width:866px;	padding:0px;	background-image: url('Content/images/peek_gradient1.bmp');}
+				width:866px;	padding:0px;	background-image: url('/Content/images/peek_gradient1.bmp');}
 	#ds_input input[type="text"] { 	width: 220px;}
 
 /* EXPERTISE --------------------------------------------------------------------------- */
@@ -163,9 +163,9 @@
 	#ex_peek {	border-top-width:1px;	border-top-style:solid;	border-top-color:black;	border-right-width:1px;
 		border-right-style:solid;	border-right-color:black;	border-bottom-width:1px;	border-bottom-style:solid;
 		border-bottom-color:black;	float:top;		height:100px;	margin:0px;	left:161px;  padding-top:0px;
-		width:866px;	background-image: url('Content/images/peek_gradient5.bmp');}
-	#util_exp textarea {background-image: url( 'Content/images/input_gradient1.bmp' ); height:20px; width:440px; margin-bottom:5px; font-family: Arial, Sans-Serif;  font-size: 12px; border: solid 1px #6887BB; resize:none;}
-	#util_exp textarea:focus {background-image: url( 'Content/images/input_gradient2.bmp' ); background-repeat:repeat-x; border: solid 1px #33677F; resize:none; height:80px;}
+		width:866px;	background-image: url('/Content/images/peek_gradient5.bmp');}
+	#util_exp textarea {background-image: url( '/Content/images/input_gradient1.bmp' ); height:20px; width:440px; margin-bottom:5px; font-family: Arial, Sans-Serif;  font-size: 12px; border: solid 1px #6887BB; resize:none;}
+	#util_exp textarea:focus {background-image: url( '/Content/images/input_gradient2.bmp' ); background-repeat:repeat-x; border: solid 1px #33677F; resize:none; height:80px;}
 
 /* CAREER ------------------------------------------------------------------------------ */
 	td.cr_title{   background: url("/Content/images/hdr_career.bmp");}
@@ -221,7 +221,7 @@
 	td.tl { padding-left:9px; padding-right:10px; padding-top:2px; padding-bottom:2px;}
 
 	td.cr_txt_peek { color:#737373; font-size:13pt; text-align:left;  font-size:10pt; font-family: Arial, sans-serif; padding-left:10px; padding-right:10px;
-					border-width:1px;	border-style:solid;	border-color:black;	 background-image: url('Content/images/peek_gradient4.bmp');}
+					border-width:1px;	border-style:solid;	border-color:black;	 background-image: url('/Content/images/peek_gradient4.bmp');}
 
 	td.cr_peek_spacer{width:12px;}
 	
@@ -323,7 +323,7 @@ margin-top:0px; margin-bottom:5px; }
 
 /* SELECTBOX STUFF ------------------------------------------------------------------------ */
 	.input_active{
-		background-image:  url( 'Content/images/input_gradient2.bmp' );
+		background-image:  url( '/Content/images/input_gradient2.bmp' );
 		border: solid 1px #33677F;
 		background-repeat: repeat-x;
 		background-position: top;
@@ -331,7 +331,7 @@ margin-top:0px; margin-bottom:5px; }
 		}
 	
 	.input_inactive{
-		background-image: url( 'Content/images/input_gradient1.bmp' );
+		background-image: url( '/Content/images/input_gradient1.bmp' );
 		border: solid 1px #33677F;
 		background-repeat: repeat-x;
 		background-position: top;	
@@ -363,7 +363,7 @@ div.selectbox-wrapper ul {
   list-style-type:none;
   margin:0px;
   padding:0px;
-  background-image:  url( 'Content/images/input_gradient8.bmp' );
+  background-image:  url( '/Content/images/input_gradient8.bmp' );
 }
 /* Selected item in dropdown list*/
 div.selectbox-wrapper ul li.selected {
@@ -371,7 +371,7 @@ div.selectbox-wrapper ul li.selected {
 
 /* Hover state for dropdown list */
 div.selectbox-wrapper ul li.current {
-/*  background-image:  url( 'Content/images/input_gradient2.bmp' );*/
+/*  background-image:  url( '/Content/images/input_gradient2.bmp' );*/
   background-color:#FFEEF7;
 }
 
@@ -397,7 +397,7 @@ div.selectbox-wrapper ul li {
   width : 160px; /* Resize Width */
   display : block;
   text-align:left;
-  background: url('Content/images/bg_select.png') right;
+  background: url('/Content/images/bg_select.png') right;
   cursor: pointer;
   border: solid 1px #33677F;
   color:#333;
@@ -410,14 +410,15 @@ div.selectbox-wrapper ul li {
 
 .customfile { width: 200px; background: white; cursor: pointer; overflow: hidden; padding: 0px; border: 1px solid #33677F; position: relative; }
 .customfile-disabled { opacity: .5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); cursor: default; }
-.customfile-feedback { display: block; margin: 1px 1px 1px 5px; background: url( 'Content/images/input_gradient1.bmp' ); font-size: 12px; color: #004873; font-style: italic; padding: 4px 10px; }
-.customfile-feedback-populated { color: black; font-style: normal; font-weight: bold; padding-left: 20px; background: url(.Content/images/icon-generic.gif) left 4px no-repeat; }
+.customfile-feedback { display: block; margin: 1px 1px 1px 5px; background: url( '/Content/images/input_gradient1.bmp' ); font-size: 12px; color: #004873; font-style: italic; padding: 4px 10px; }
+.customfile-feedback-populated { color: black; font-style: normal; font-weight: bold; padding-left: 20px; background: url(/Content/images/icon-generic.gif) left 4px no-repeat; }
 .customfile-button { border-left: 1px solid #004873; background: #BDE1FF; color: #004873; font-weight: bold; float: right; width: 40px; padding: 5px 12px; text-align: center; text-decoration: none; font-size: 12px; }
 .customfile-hover .customfile-button, .customfile-focus .customfile-button { background: #F8007C; border-color:#aaa; color:#FFECF5;}
 .customfile-focus .customfile-button { outline: 1px dotted #ccc; }
 
 /*file type icons*/
-.customfile-ext-jpg, .customfile-ext-gif, .customfile-ext-png, .customfile-ext-jpeg, .customfile-ext-bmp { background-image: url(.Content/images/icon-image.gif);}
-.customfile-ext-mp3, .customfile-ext-mp4, .customfile-ext-mov, .customfile-ext-swf, .customfile-ext-wav, .customfile-ext-m4v { background-image: url(.Content/images/icon-media.gif);}
-.customfile-ext-zip, .customfile-ext-tar, .customfile-ext-sit { background-image: url(.Content/images/icon-zip.gif);}
+.customfile-ext-jpg, .customfile-ext-gif, .customfile-ext-png, .customfile-ext-jpeg, .customfile-ext-bmp { background-image: url(/Content/images/icon-image.gif);}
+.customfile-ext-mp3, .customfile-ext-mp4, .customfile-ext-mov, .customfile-ext-swf, .customfile-ext-wav, .customfile-ext-m4v { background-image: url(/Content/images/icon-media.gif);}
+.customfile-ext-zip, .customfile-ext-tar, .customfile-ext-sit { background-image: url(/Content/images/icon-zip.gif);}
 
+>>>>>>> 637b6e671c05123e46955e8c612e5f3837426341

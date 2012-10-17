@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +12,7 @@ namespace _9Res.Models
         public string middleName { get; set; }
         public string lastName { get; set; }
 
+        public string file_photo_name { get; set; }
 
         public string Street { get; set; }
         public string city { get; set; }
@@ -140,5 +141,3 @@ namespace _9Res.Models
         public bool expertise_6_priv { get; set; }
 
     }
-
-}

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <publishData>
   <publishProfile publishUrl="https://w03.winhost.com:8172/MsDeploy.axd" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="9res.net" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="True" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="9Res" publishMethod="MSDeploy" replaceMatchingFiles="True" userName="9resnet0" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6ISZCeM88E2G3GQq4k5NYAAAAAACAAAAAAADZgAAqAAAABAAAACnFyqzmwE5++l2La258vzbAAAAAASAAACgAAAAEAAAAAjo9R5/HTxEjE3bR4wPipoYAAAAA3FoVTxXTpgu7qMQmGoxJC5Jvs3zzUiTFAAAAEvOXmAlGyfDRgWRlsySaYqIrH+6" SelectedForPublish="True" />
 </publishData>

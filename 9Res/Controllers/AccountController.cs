@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -159,6 +159,7 @@ namespace _9Res.Controllers
 
         public ActionResult ContactInfo()
         {
+            ViewBag.jsPageRef = "contactinfo";
             ContactInfo model = (ContactInfo)Session["ContactInfoModel"];
             return View(model);
         }
@@ -166,6 +167,7 @@ namespace _9Res.Controllers
         [HttpPost]
         public ActionResult ContactInfo(ContactInfo ContactInfoModel)
         {
+            ViewBag.jsPageRef = "contactinfo";
             Session["ContactInfoModel"] = ContactInfoModel;
             //return (RedirectToAction("Objective", new object { ContactInfo = ContactInfoModel }));
             //return View();
@@ -178,12 +180,14 @@ namespace _9Res.Controllers
         [HttpPost]
         public ActionResult Objective(Objective ObjectiveModel)
         {
+            ViewBag.jsPageRef = "objective";
             Session["ObjectiveModel"] = ObjectiveModel;
             return (RedirectToAction("Expertise"));
         }
 
         public ActionResult Objective()
         {
+            ViewBag.jsPageRef = "objective";
             return View();
         }
 
@@ -191,6 +195,7 @@ namespace _9Res.Controllers
         
         public ActionResult Expertise()
         {
+            ViewBag.jsPageRef = "expertise";
             Expertise model = (Expertise)Session["ExpertiseModel"];
             return View(model);
         }
@@ -198,6 +203,7 @@ namespace _9Res.Controllers
         [HttpPost]
         public ActionResult Expertise(Expertise ExpertiseModel)
         {
+            ViewBag.jsPageRef = "expertise";
             Session["ExpertiseModel"] = ExpertiseModel;
             //return (RedirectToAction("Objective", new object { ContactInfo = ContactInfoModel }));
             return (RedirectToAction("Career"));
@@ -206,6 +212,7 @@ namespace _9Res.Controllers
 
         public ActionResult Distinctions()
         {
+            ViewBag.jsPageRef = "distinctions";
             Distinctions model = (Distinctions)Session["DistinctionsModel"];
             return View(model);
         }
@@ -214,52 +221,46 @@ namespace _9Res.Controllers
         [HttpPost]
         public ActionResult Distinctions(Distinctions DistinctionsModel)
         {
+            ViewBag.jsPageRef = "distinctions";
             Session["DistinctionsModel"] = DistinctionsModel;
             return (RedirectToAction("Tester"));
         }
 
 
-
-
-
-
         public ActionResult Keywords()
         {
+            ViewBag.jsPageRef = "keywords";
             return View();
         }
 
         [HttpPost]
         public ActionResult Keywords(Keywords KeywordsModel)
         {
+            ViewBag.jsPageRef = "keywords";
             Session["KeywordsModel"] = KeywordsModel;
             //return (RedirectToAction("Objective", new object { ContactInfo = ContactInfoModel }));
             //return View();
             return (RedirectToAction("Tester"));
         }
-
-
-
-
-
-
+     
         public ActionResult Career()
         {
+            ViewBag.jsPageRef = "career";
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Career(Career CareerModel)
+        {
+            ViewBag.jsPageRef = "career";
+            Session["CareerModel"] = CareerModel;
+            return (RedirectToAction("Tester"));
         }
 
         public ActionResult Tester()
         {
             return View(Session["ExpertiseModel"]);
         }
-
-
-        [HttpPost]
-        public ActionResult Career(Career CareerModel)
-        {
-            Session["CareerModel"] = CareerModel;
-            return (RedirectToAction("Tester"));
-        }
-        
 
         #region Status Codes
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)

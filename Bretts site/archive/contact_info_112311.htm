@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>9Res - Contact Info</title>
+<!DOCTYPE HTML>
+<link rel="stylesheet" type="text/css" href="9res.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="animatedcollapse.js">
+
+/***********************************************
+* Animated Collapsible DIV v2.4- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+<script type="text/javascript">
+animatedcollapse.addDiv('hdr2', 'fade=0,speed=400,height=128px,hide=1');
+animatedcollapse.ontoggle=function($, divobj, state){ //fires each time a DIV is expanded/contracted
+	//$: Access to jQuery
+	//divobj: DOM reference to DIV being expanded/ collapsed. Use "divobj.id" to get its ID
+	//state: "block" or "none", depending on state
+}
+function info_mouse_over(td_obj) {
+  if(td_obj.className == "hdr_info3") { td_obj.className = "hdr_info4";} else { td_obj.className = "hdr_info2";}
+}
+function info_mouse_out(td_obj) {
+   if(td_obj.className == "hdr_info4") { td_obj.className = "hdr_info3";} else { td_obj.className = "hdr_info1";}
+}
+function info_mouse_click(td_obj) {
+  if(td_obj.className == "hdr_info1") {n = "hdr_info3"; animatedcollapse.toggle('hdr2');}
+  if(td_obj.className == "hdr_info2") {n = "hdr_info4"; animatedcollapse.toggle('hdr2');}
+  if(td_obj.className == "hdr_info3") {n = "hdr_info1"; animatedcollapse.toggle('hdr2');}
+  if(td_obj.className == "hdr_info4") {n = "hdr_info2"; animatedcollapse.toggle('hdr2');}
+  td_obj.className = n;
+}
+animatedcollapse.init();
+
+</script>
+
+</head>
+<body>
+
+
+<div id ="nav">
+	<table class="nav_tab" height=100% width=158>
+	<tr><td ><img src="./images/logo.bmp" width=157 height=113></td></tr>
+	<tr><td ><img src="./images/logo_footer.bmp" width=157 height=53></td></tr>
+	<tr><td class="nav_oth_off" onmouseover="this.className='nav_oth_on'" onmouseout="this.className='nav_oth_off'" onclick="document.location='welcome.htm'">Welcome!</td></tr>
+	<tr><td class="res_off" onmouseover="this.className='res_on'" onmouseout="this.className='res_off'" onclick="document.location='resume.htm'">Your Resume</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'" onclick="document.location='contact_info.htm'">Contact Info</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'" onclick="document.location='objective.htm'">Objective</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'" onclick="document.location='expertise.htm'">Expertise</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'" onclick="document.location='career.htm'">Career</td></tr>
+	<tr><td class="nav_off" onmouseover="this.className='nav_on'" onmouseout="this.className='nav_off'" onclick="document.location='distinctions.htm'">Distinctions</td></tr>
+	<tr><td class="nav_lof" onmouseover="this.className='nav_lon'" onmouseout="this.className='nav_lof'" onclick="document.location='keywords.htm'">Keywords</td></tr>
+	<tr height=100%><td>&nbsp;<br></td></tr>
+	<tr><td><img src="./images/nav_footer.bmp" width=157 height=11></td></tr>
+	<tr><td class="nav_oth_off" onmouseover="this.className='nav_oth_on'" onmouseout="this.className='nav_oth_off'" onclick="document.location='about.htm'">About the Site</td></tr>
+	</table>
+</div>
+<div id="main" align="left">
+  <div id ="hdr" align="left">
+	<table border=0 height=100% width=100%>
+	<tr height=42>
+	<td width=40 class="hdr_line"></td>
+	<td width=280 class="hdr_title1"></td>
+	<td width=450 class="hdr_line" align="right"></td>
+	<td width=96 class="hdr_info1" onclick="javascript:info_mouse_click(this)" onmouseover="javascript:info_mouse_over(this)" onmouseout="javascript:info_mouse_out(this)"></td>	
+	</tr>
+	<tr height=100%><td class="display" colspan=4 width=100%>
+	<table width=100%><tr><td class="hdr_txt">This section is a breeze.  Just enter any information you’d like available on your resume (just leave out any details you don't want to show up).&nbsp;&nbsp;  You can even jump-start the process by importing your info from LinkedIn!</td></tr>
+	</table>
+	</td></tr>
+	</table>
+  </div>
+  <div id="hdr2" align="left">	<table width=100%><tr><td class="hdr_txt">...In case you hadn't noticed, this site is cool as shit.</td></tr></table>
+  </div>
+  <div id ="ppane" align="left"></div>
+  <div id ="ppane_w" align="PREV">
+  	<table class="util" width=866>
+	<tr><td class="ppn_title" width=50%>PREVIEW PANE</td><td class="ppn_title" width=50%>PREVIEW PANE</td></tr>
+	</table>
+  </div>
+  <div id ="util" align="PREV">
+  <br>
+  <table>
+			<tr><td class="util_hdr" rowspan=2>Import</td>
+			    <td class="util_lbl">site</td>
+			    <td colspan=3></td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td class="algn_top"><a href="www.theonion.com" onMouseover="document.img_import.src='images/cmd_import_on.bmp'" onMouseout="document.img_import.src='images/cmd_import.bmp'"><img name="img_import" src="images/cmd_import.bmp"></a></td>
+			    <td rowspan=2></td>
+			    <td colspan=2></td></tr>
+			<tr><td class="util_hdr"  rowspan=2>Email</td>
+			    <td class="util_lbl">address</td>
+			    <td class="util_lbl">password</td>
+			    <td colspan=2></td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td colspan=2></td></tr>
+			<tr><td class="util_hdr"  rowspan=2>Name</td>
+			    <td class="util_lbl">first</td>
+			    <td class="util_lbl">middle</td>
+			    <td class="util_lbl">last</td>
+			    <td></td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td></td></tr>
+
+			<tr><td class="util_hdr"  rowspan=2>Address</td>
+			    <td class="util_lbl">street</td>
+			    <td class="util_lbl">city/town</td>
+			    <td class="util_lbl">state/province</td>
+			    <td class="util_lbl">zip/postal code</td></tr>
+			<tr><td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td>
+			    <td><input type="text" name="q"></td></tr>
+			<tr><td class="util_hdr"  rowspan=2>Phone</td>
+			    <td class="util_lbl">phone 1</td>
+			    <td class="util_lbl">number 1</td>
+			    <td class="util_lbl">phone 2</td>
+			    <td class="util_lbl">number 2</td></tr>
+			<tr><td>
+				<select name="phone1" id="phone1" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">Home</option>
+            			    <option value="2" class="">Work</option>
+            			    <option value="3" class="">Mobile</option>
+			        </select></td>
+			    <td><input type="text" name="q"></td>
+			    <td><select name="phone1" id="phone1" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">Home</option>
+            			    <option value="2" class="">Work</option>
+            			    <option value="3" class="">Mobile</option>
+			        </select></td>
+			    <td><input type="text" name="q"></td></tr>
+
+			<tr><td class="util_hdr" rowspan=5>Other Stuff</td>
+			    <td rowspan=5><img width=135 height=130 src="data/photos/akabret-1.jpg"></td>
+			    <td rowspan=2><a href="www.theonion.com" onMouseover="document.img_upload.src='images/cmd_upload_on.bmp'" onMouseout="document.img_upload.src='images/cmd_upload.bmp'"><img name="img_upload" src="images/cmd_upload.bmp"></a></td>
+			    <td class="util_lbl">travel</td>
+			    <td rowspan=5></td></tr>
+			<tr><td>
+			        <select name="user_travel" id="trvl" type="text">
+			            <option value=""></option>
+            			    <option value="1" class="">None</option>
+            			    <option value="2" class="">A few trips a year</option>
+            			    <option value="3" class="">One trip a month</option>
+            			    <option value="4" class="">Several trips a month</option>
+            			    <option value="5" class="">Lots of travel</option>
+			        </select></td></tr>
+			<tr><td class="util_lbl">social media</td>
+			    <td class="util_lbl">ID</td></tr>
+			<tr><td><select name="user_travel" id="trvl" type="text" onchange="showValue(this.value)">
+            			    <option value="0"></option>
+            			    <option value="1">Facebook</option>
+            			    <option value="2">LinkedIn</option>
+            			    <option value="3">Skype</option>
+			        </select></td>
+			    <td><input type="text" name="q"></td></tr>
+			<tr><td colspan=2>&nbsp;</td></tr>
+			</table>
+
+  </div>
+</div>
+<script type="text/javascript">
+</script>
+</body>
+
+</html>
