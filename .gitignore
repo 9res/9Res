@@ -10,4 +10,6 @@ doc/app
 *~
 .DS_Sto
 */obj/Debug/*
-9Res.suo
+packages
+Bretts\ site
+9Res/bin
