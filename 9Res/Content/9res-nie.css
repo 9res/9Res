@@ -239,20 +239,20 @@
 		border-right-color:black;	float:top; margin:0px;	left:162px;	width:866px;	padding:0px;	background:white; }
 
 	#popupContact input[type="long"] {width:200px; font-family: Arial, Sans-Serif;	font-size: 12px; margin-bottom: 5px; margin-right: 5px; display: block; padding: 2	px; 
-		border: solid 1px #6887BB; background-image: url( 'Content/images/input_gradient1.bmp' ); 	background-repeat: repeat-x; background-position: top;	}
+		border: solid 1px #6887BB; background-image: url( '/Content/images/input_gradient1.bmp' ); 	background-repeat: repeat-x; background-position: top;	}
 	#popupContact input[type="medium"] {width:100px; font-family: Arial, Sans-Serif;	font-size: 12px; margin-bottom: 5px; margin-right: 5px; display: block; padding: 2	px; 
-		border: solid 1px #6887BB; background-image: url( 'Content/images/input_gradient1.bmp' ); 	background-repeat: repeat-x; background-position: top;	}
+		border: solid 1px #6887BB; background-image: url( '/Content/images/input_gradient1.bmp' ); 	background-repeat: repeat-x; background-position: top;	}
 	#popupContact input[type="short"] {width:40px; font-family: Arial, Sans-Serif;	font-size: 12px; margin-bottom: 5px; margin-right: 5px; display: block; padding: 2	px; 
-		border: solid 1px #6887BB; background-image: url( 'Content/images/input_gradient1.bmp' ); 	background-repeat: repeat-x; background-position: top;	}
+		border: solid 1px #6887BB; background-image: url( '/Content/images/input_gradient1.bmp' ); 	background-repeat: repeat-x; background-position: top;	}
 
-	#popupContact input[type="long"]:focus {	background-image: url( 'Content/images/input_gradient2.bmp' );}
-	#popupContact input[type="medium"]:focus {	background-image: url( 'Content/images/input_gradient2.bmp' );}
-	#popupContact input[type="short"]:focus {	background-image: url( 'Content/images/input_gradient2.bmp' );}
+	#popupContact input[type="long"]:focus {	background-image: url( '/Content/images/input_gradient2.bmp' );}
+	#popupContact input[type="medium"]:focus {	background-image: url( '/Content/images/input_gradient2.bmp' );}
+	#popupContact input[type="short"]:focus {	background-image: url( '/Content/images/input_gradient2.bmp' );}
 		
 	#popupContact {overflow: auto;}
-	#popupContact textarea[type="pop_off"] { background-image: url( 'Content/images/input_gradient6.bmp' ); border: solid 1px #33677F;}
-	#popupContact textarea {width:760px;  height:19px; resize:none; background-image: url( 'Content/images/input_gradient4.bmp' );}
-	#popupContact textarea:focus {  height:64px; background-image: url( 'Content/images/input_gradient5.bmp' ); border: solid 1px #33677F;}
+	#popupContact textarea[type="pop_off"] { background-image: url( '/Content/images/input_gradient6.bmp' ); border: solid 1px #33677F;}
+	#popupContact textarea {width:760px;  height:19px; resize:none; background-image: url( '/Content/images/input_gradient4.bmp' );}
+	#popupContact textarea:focus {  height:64px; background-image: url( '/Content/images/input_gradient5.bmp' ); border: solid 1px #33677F;}
 
 /*
 	#popupContact2 input[type="long"] {width:160px; font-family: Arial, Sans-Serif;	font-size: 12px; margin-bottom: 5px; margin-right: 5px; display: block; padding: 2	px; 

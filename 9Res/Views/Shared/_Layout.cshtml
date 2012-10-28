@@ -37,6 +37,11 @@
     @{ 
         if (ViewBag.jsPageRef != null && ViewBag.jsPageRef != "") {
             <script src="@Url.Content(jsPageRef)" type="text/javascript"></script>
+        
+            if (ViewBag.jsPageRef == "career") {
+                <script src="@Url.Content("~/Scripts/popup.js")" type="text/javascript"></script>
+            
+            }
         }
     }
 
