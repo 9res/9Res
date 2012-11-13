@@ -1,9 +1,17 @@
 @model _9Res.Models.Career
 @{    ViewBag.Title = "Career";}
 
+
+<script>
+    function NextPage() {
+    }
+</script>
 <h2>Career</h2>
 <!-- <title>9Res - Career</title> -->
 <div id="main" align="left">
+ @using (Html.BeginForm())
+ {
+        @Html.ValidationSummary(true)
   <div id ="hdr" align="left">
 	<table border=0 cellpadding=0 cellspacing=0 height=100% width=100%>
 	<tr height=42>
@@ -59,11 +67,16 @@
     </table>
   </div>
 
+     <div id="divHiddenJobControls" style="visibility:hidden">
+      
+     </div>
+     
   <div id ="util_cr" width=846>
   </div> 
                 <center> <input type="button" id="btnPrevious" value="<---Previous"/> 
-                <input type="submit" value="Next! --->" /> </center>
- 
+                <input type="submit" value="Next! --->" onSubmit="javascript:NextPage();return false;" /> </center>
+     
+ }
 </div>
 
 

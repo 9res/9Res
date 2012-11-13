@@ -209,6 +209,22 @@ namespace _9Res.Controllers
             return (RedirectToAction("Career"));
         }
 
+        public ActionResult Career()
+        {
+            ViewBag.jsPageRef = "career";
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Career(Career CareerModel, Object brettsbigclassthingy )
+        {
+           //Request.Params
+
+
+            ViewBag.jsPageRef = "career";
+            Session["CareerModel"] = CareerModel;
+            return (RedirectToAction("Distinctions"));
+        }
 
         public ActionResult Distinctions()
         {
@@ -243,20 +259,6 @@ namespace _9Res.Controllers
             return (RedirectToAction("Tester"));
         }
      
-        public ActionResult Career()
-        {
-            ViewBag.jsPageRef = "career";
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Career(Career CareerModel)
-        {
-            ViewBag.jsPageRef = "career";
-            Session["CareerModel"] = CareerModel;
-            return (RedirectToAction("Tester"));
-        }
-
         public ActionResult Tester()
         {
             return View(Session["ExpertiseModel"]);

@@ -299,11 +299,11 @@
 	#ppane_kw{	border-top-width:1px;	border-top-style:solid;	border-top-color:black;	border-right-width:1px; border-right-style:solid; 
 		border-right-color:black;	float:top;	overflow:auto;	height:240px;	margin:0px;	left:162px;	width:866px;	padding:0px;	background:white;
 		padding-top: 0px; color:black;	font-size:8pt;	font-weight:normal; font-family: Arial, sans-serif;}
-	#util_kw input[type="text_found"]:focus { background-image: url( 'Content/images/input_gradient3.bmp' ); border: solid 1px #33677F; }
+	#util_kw input[type="text_found"]:focus { background-image: url( '/Content/images/input_gradient3.bmp' ); border: solid 1px #33677F; }
 	#util_kw textarea { padding-left:10px; height:80px; width:100%; font-family: Arial, Sans-Serif; font-size: 12px; border: solid 1px #33677F; resize:none;}
 	input[type="text_found"]	{
 		font-family: Arial, Sans-Serif;	font-size: 12px; margin-bottom: 5px; margin-right: 5px; display: block; padding: 2	px; width: 160px;
-		border: solid 1px #33677F; background-image: url( 'Content/images/input_gradient1.bmp' ); 	background-repeat: repeat-x; background-position: top;	}
+		border: solid 1px #33677F; background-image: url( '/Content/images/input_gradient1.bmp' ); 	background-repeat: repeat-x; background-position: top;	}
 
 /* POPUP STUFF ---------------------------------------------------------------------------- */
 a.ui-corner-all { font-size:12px; font-family: Arial, sans-serif;}
