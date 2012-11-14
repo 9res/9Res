@@ -92,7 +92,7 @@
         var alpha = "#abcdefghijklmnopqrstuvwxyz";
         var offsetVal = 1;
         var scrollHeight = tbl.rows[0].offsetHeight;
-        while (alpha.charAt(offsetVal) != searchLtr) {
+        while (alpha.charAt(offsetVal) != searchLtr && offsetVal < tbl.rows.length) {
             scrollHeight += tbl.rows[offsetVal].offsetHeight
             offsetVal += 1;
         }
