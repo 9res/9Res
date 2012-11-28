@@ -1,4 +1,4 @@
-﻿
+
 
     var btnPrevious = $('#btnPrevious');
     $(function () {
@@ -10,8 +10,6 @@
         });
 
     });
-
-
 
     animatedcollapse.addDiv('hdr2', 'fade=0,speed=400,height=128px,hide=1');
     animatedcollapse.ontoggle = function ($, divobj, state) { //fires each time a DIV is expanded/contracted
@@ -96,38 +94,23 @@
         var startTime = new Date().getTime(); // get the current time
         while (new Date().getTime() < startTime + milliSeconds); // hog cpu
     }
+
     function display_jobs(prm_direction) {
         var jtoshow = document.getElementById("jobs_to_show").innerHTML;
         if (prm_direction == "+") { jtoshow++; } else if (prm_direction == "-") { jtoshow--; }
         document.getElementById("jobs_to_show").innerHTML = jtoshow;
-
-        jobArray = new Array();
-        if (jtoshow >= 1) { addJob(1, "Akamai Technologies", "Sr. Business Intelligence Architect", "Cambridge, MA", "Akamai", "Sr. BI Architect", "07/01/2009", "", ""); }
-        if (jtoshow >= 2) { addJob(2, "Lenovo Corporation", "Business Intelligence Consultant", "Durham, NC", "Lenovo", "BI Consultant", "04/01/2008", "07/01/2009", ""); }
-        if (jtoshow >= 3) { addJob(3, "M|C Communications", "Business Intelligence Consultant", "Boston, MA", "MC Comm.", "BI Consultant", "07/01/2006", "04/01/2008", ""); }
-        if (jtoshow >= 4) { addJob(4, "Areva", "Business Intelligence Consultant", "Meriden, CT", "Areva", "BI Consultant", "08/01/2005", "06/01/2006", ""); }
-        if (jtoshow >= 5) { addJob(5, "EMD Serono", "Business Intelligence Consultant", "Rockland, MA", "EMD Serono", "BI Consultant", "04/01/2003", "08/01/2005", ""); }
-        if (jtoshow >= 6) { addJob(6, "Verispan", "Business Intelligence Consultant", "Waltham, MA", "Verispan", "BI Consultant", "01/01/2003", "04/01/2003", ""); }
-        if (jtoshow >= 7) { addJob(7, "Investment Technology Group", "Business Intelligence Consultant", "Boston, MA", "ITG", "BI Consultant", "10/01/2001", "12/01/2002", ""); }
-        if (jtoshow >= 8) { addJob(8, "Palm Computing", "Business Intelligence Consultant", "Cambridge, MA", "Palm Computing", "BI Consultant", "03/01/2001", "10/01/2001", ""); }
-        if (jtoshow >= 9) { addJob(9, "Akamai Technologies", "Technical Team Leader", "Cambridge, MA", "Akamai", "Tech. Team Leader", "04/01/2000", "03/01/2001", "Y"); }
-        if (jtoshow >= 10) { addJob(10, "Akamai Technologies", "Senior Developer", "Cambridge, MA", "Akamai", "Senior Developer", "10/01/1999", "04/01/2000", ""); }
-        if (jtoshow >= 11) { addJob(11, "Oracle Corporatoin", "Sr. Member of the Technical Staff", "Waltham, MA", "Oracle Corp", "Sr. Member Tech Staff", "10/01/1997", "10/01/1999", ""); }
-        if (jtoshow >= 12) { addJob(12, "IMS", "Business Intelligence Consultant", "Philadelphia, PA", "IMS", "BI Consultant", "08/01/1996", "09/01/1997", ""); }
-        if (jtoshow >= 13) { addJob(13, "BellSouth", "Report Developer", "Atlanta, GA", "BellSouth", "Report Developer", "05/01/1995", "08/01/1996", ""); }
-        pop_timelines();
-
-        pop_data();
-        pop_details();
+        pop_timelines(jtoshow);
     }
+
     function pop_data() {
         jobArray = new Array();
         jobDetails = new Array();
+
         addJob(1, "Akamai Technologies", "Sr. Business Intelligence Architect", "Cambridge, MA", "Akamai", "Sr. BI Architect", "07/01/2009", "", "");
         addJob(2, "Lenovo Corporation", "Business Intelligence Consultant", "Durham, NC", "Lenovo", "BI Consultant", "04/01/2008", "07/01/2009", "");
         addJob(3, "M|C Communications", "Business Intelligence Consultant", "Boston, MA", "MC Comm.", "BI Consultant", "07/01/2006", "04/01/2008", "");
         addJob(4, "Areva", "Business Intelligence Consultant", "Meriden, CT", "Areva", "BI Consultant", "08/01/2005", "06/01/2006", "");
-        /* addJob(5,"EMD Serono", "Business Intelligence Consultant", "Rockland, MA", "EMD Serono","BI Consultant","04/01/2003","08/01/2005","");
+        addJob(5,"EMD Serono", "Business Intelligence Consultant", "Rockland, MA", "EMD Serono","BI Consultant","04/01/2003","08/01/2005","");
         addJob(6,"Verispan", "Business Intelligence Consultant", "Waltham, MA", "Verispan","BI Consultant","01/01/2003","04/01/2003","");
         addJob(7,"Investment Technology Group", "Business Intelligence Consultant", "Boston, MA", "ITG","BI Consultant","10/01/2001","12/01/2002","");
         addJob(8,"Palm Computing", "Business Intelligence Consultant", "Cambridge, MA", "Palm Computing","BI Consultant","03/01/2001","10/01/2001","");
@@ -136,7 +119,7 @@
         addJob(11,"Oracle Corporation", "Sr. Member of the Technical Staff", "Waltham, MA", "Oracle Corp","Sr. Member Tech Staff","10/01/1997","10/01/1999","");
         addJob(12,"IMS", "Business Intelligence Consultant", "Philadelphia, PA", "IMS","BI Consultant","08/01/1996","09/01/1997","");
         addJob(13,"BellSouth", "Report Developer", "Atlanta, GA", "BellSouth","Report Developer","05/01/1995","08/01/1996","");
-        */
+        
         addJobDetails(1, 1, "Generated Robot, Akamai’s Revenue Forecasting system, which is used to generate company revenue forecasts announced each quarter to Wall Street analysts. This system forecasts internet traffic for every Akamai client, identifying client-specific trending and seasonality. It then runs these forecasts through our Invoicing system, to generate a very detailed revenue forecast. In its first quarter of operations, Revenue was forecasted within 1% -- a substantial improvement over Akamai’s historical 5-8% forecast accuracy.");
         addJobDetails(2, 1, "Proposed, designed and developed LGOS (Lenovo Global Order Status), a reporting application that handles all Lenovo order reporting, for internal business users, external partners and major customers.");
         addJobDetails(2, 2, "Built a data model and reporting system, AppTracker, for Lenovo to track and report upon over five thousand IBM and Lenovo business applications. This is part of its strategy to fully separate Lenovo's business activities from IBM's, and to migrate Lenovo to its own long-term IT platform.");
@@ -154,7 +137,7 @@
         // leverages DOM table logic to hop around based upon the incoming tr.
         // Let's hope we never have to debug it.
         // set a few starting values
-        var tr_table = prm_tr.parentNode;  					// this is the parent table
+        var tr_table = prm_tr.parentNode;      				// this is the parent table
         var tr_table_rows = prm_tr.parentNode.rows.length; 	// # rows in parent table
         var title_count = 0;
         var title_class;
@@ -422,7 +405,7 @@
         jobDetails[x].Order = prm_order;
         jobDetails[x].Detail = prm_details;
     }
-    function pop_timelines() {
+    function pop_timelines(jtoshow) {
         // var dt_max_end = new Date();
 
         var chk_nums = document.getElementById("chk_job_nums").checked;
@@ -509,7 +492,9 @@
         var counter = 0;
         var counter_disp;
 
-        for (var a = 0; a < jobArray.length; a++) {
+        if (jtoshow >= jobArray.length) { jtoshow = jobArray.length; }
+
+        for (var a = 0; a < jtoshow; a++) {
             tl_graph = tl_graph + "<td ";
             if (jobArray[a].Firm == "Filler") { tl_graph = tl_graph + " class='cr_txt0' "; counter_disp = "&nbsp;"; }
             else {
@@ -543,7 +528,7 @@
         var job_rows = 2;
         var job_width1 = 0;
         var job_width2 = 0;
-        for (var b = 0; b < jobArray.length; b++) { if (jobArray[b].Firm != "Filler") { job_count++; } }
+        for (var b = 0; b < jtoshow; b++) { if (jobArray[b].Firm != "Filler") { job_count++; } }
         if (job_count <= 6) {
             job_rows = 1;
             document.getElementById("ppane_car").style.height = "80px";
@@ -571,7 +556,7 @@
         var job_count_disp;
 
 
-        for (var c = 0; c < jobArray.length; c++) {
+        for (var c = 0; c < jtoshow; c++) {
             if (jobArray[c].Firm != "Filler") {
                 job_count++;
                 if (chk_nums == true) { job_count_disp = job_count; } else { job_count_disp = ""; }
@@ -618,7 +603,6 @@
         document.getElementById("career_row2").innerHTML = career_pos1;
         document.getElementById("career_row3").innerHTML = career_title2;
         document.getElementById("career_row4").innerHTML = career_pos2;
-
     }
 
 
