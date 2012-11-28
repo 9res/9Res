@@ -1,5 +1,4 @@
 
-
     var btnPrevious = $('#btnPrevious');
     $(function () {
         btnPrevious = $('#btnPrevious');
@@ -100,6 +99,8 @@
         if (prm_direction == "+") { jtoshow++; } else if (prm_direction == "-") { jtoshow--; }
         document.getElementById("jobs_to_show").innerHTML = jtoshow;
         pop_timelines(jtoshow);
+        pop_data();
+        jobArray.sort(sort_by_date);
     }
 
     function pop_data() {
