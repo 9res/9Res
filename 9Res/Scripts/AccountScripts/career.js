@@ -1,4 +1,5 @@
 
+
     var btnPrevious = $('#btnPrevious');
     $(function () {
         btnPrevious = $('#btnPrevious');
@@ -82,6 +83,22 @@
         }
         jobArray[x].Merge = prm_merge;
     }
+
+    function addDummyJob(newJobArray) {
+        var curr_date = new Date();
+        newJobArray.Id = jobArray.length;
+        newJobArray.Firm_Long = "Pile of Leaves Inc.";
+        newJobArray.Title_Long = "Senior Leaf Jumper";
+        newJobArray.Location = "Back Yard";
+        newJobArray.Firm = "POL Inc.";
+        newJobArray.Title = "Sr. Leaf Jumper";
+        newJobArray.Start = new Date("11/1/2012");
+        newJobArray.StartStr = dateToStr(newJobArray.Start);
+        newJobArray.End = new Date("12/15/2012");
+        newJobArray.EndStr = dateToStr(newJobArray.End);
+        newJobArray.Merge = "";
+    }
+
     function sort_by_date(a, b) {
         var x = a.Start;
         var y = b.Start;
@@ -120,7 +137,7 @@
         addJob(11,"Oracle Corporation", "Sr. Member of the Technical Staff", "Waltham, MA", "Oracle Corp","Sr. Member Tech Staff","10/01/1997","10/01/1999","");
         addJob(12,"IMS", "Business Intelligence Consultant", "Philadelphia, PA", "IMS","BI Consultant","08/01/1996","09/01/1997","");
         addJob(13,"BellSouth", "Report Developer", "Atlanta, GA", "BellSouth","Report Developer","05/01/1995","08/01/1996","");
-        
+
         addJobDetails(1, 1, "Generated Robot, Akamai’s Revenue Forecasting system, which is used to generate company revenue forecasts announced each quarter to Wall Street analysts. This system forecasts internet traffic for every Akamai client, identifying client-specific trending and seasonality. It then runs these forecasts through our Invoicing system, to generate a very detailed revenue forecast. In its first quarter of operations, Revenue was forecasted within 1% -- a substantial improvement over Akamai’s historical 5-8% forecast accuracy.");
         addJobDetails(2, 1, "Proposed, designed and developed LGOS (Lenovo Global Order Status), a reporting application that handles all Lenovo order reporting, for internal business users, external partners and major customers.");
         addJobDetails(2, 2, "Built a data model and reporting system, AppTracker, for Lenovo to track and report upon over five thousand IBM and Lenovo business applications. This is part of its strategy to fully separate Lenovo's business activities from IBM's, and to migrate Lenovo to its own long-term IT platform.");
@@ -131,7 +148,10 @@
         addJobDetails(4,2,"Prospector allows upper management to see total company sales, on an up-to-the-moment basis, in any currency used within the organization. It also provides tight coordination between sales offices and manufacturing plants, to quickly route sales to the optimal manufacturing plant. This routing process uses a sophisticated algorithm that assesses the customer’s desired delivery date, current plant utilization levels, the specific items ordered, plant/customer proximity, and even country-specific customs issues.");
         addJobDetails(4,3,"Prospector’s global implementation involved designing over-arching data flow diagrams (illustrating the entire lifecycle of all data flowing into the company, through validation / normalization / aggregation, and into the data warehouse); full network topologies (illustrating every machine, connection, application, protocol and operating system); logical and physical data models; and ETL documentation standards used by on-site warehousing teams in each country.");
         */
+
+        
     }
+
     function setTabs(prm_tr, prm_set) {
         // This particularly crappy function finds the tr the user has selected and changes the background of the cells
         // I say "particularly crappy" because it was hard to write and no doubt twice as hard to read, because it
@@ -175,6 +195,7 @@
         // sort jobs
         jobArray.sort(sort_by_date);
         // for each job
+
         for (var z = jobArray.length - 1; z > 0; z--) {
             // print the title
             jobHTM += "<tr class=\"hdr\" onclick=\"javascript:edit_job(\'" + getJobKey(jobArray[z].Id) + "\');\" onmouseout=\"javascript:setTabs(this,'off');\" onmouseover=\"javascript:setTabs(this,'on');\"><td width=10>&nbsp;</td>";
@@ -259,9 +280,30 @@
 
     function edit_job(prm_jKey) {
         var end_str;
-        if (jobArray[prm_jKey].EndStr == "Present")
-        { end_str = ""; }
-        else { end_str = jobArray[prm_jKey].EndStr; }
+
+        // get this array
+        selJobArray = new Array();
+        selJobDetails = new Array();
+
+        // copy jobArray
+        if (prm_jKey == -1) {
+
+            addDummyJob(selJobArray);
+            selJobDetails[0] = new Array();
+            selJobDetails[0].Detail = "Facilitated the aggregation of leaves into large piles.  Then jumped in them.";
+            end_str = selJobArray.EndStr;
+        }
+        else {
+            selJobArray = jobArray[prm_jKey];
+            if (selJobArray.EndStr == "Present") { end_str = ""; }
+            else { end_str = selJobArray.EndStr; }
+
+            for (var y = 0; y < jobDetails.length; y++) {
+                if (jobDetails[y].Id == selJobArray.Id) {
+                    selJobDetails[selJobDetails.length] = jobDetails[y];
+                }
+            }
+        }
 
         var edtHTM = "<div class=\"pop_top\"><a id=\"popupContactClose\"></a>";
         edtHTM += "<table cellpadding=0 cellspacing=0 border=0 width=\"100%\"><tr>";
@@ -288,30 +330,28 @@
         edtHTM += "<td class=\"cr_pop_txt5\">Title</td></tr>";
         edtHTM += "<tr><td width=10 class=\"util_txt2\">&nbsp;</td>";
 
-        edtHTM += "<td><input type=\"long\" id=\"txt_Firm_Long\" title=\"What was the name of the place where you worked?<br>Ex: Acme Corporation\" onkeyup=\"javascript:jobArray[" + jobArray[prm_jKey].Id + "].Firm_Long=this.value;\" value=\"" + jobArray[prm_jKey].Firm_Long + "\" /></td>";
-        edtHTM += "<td><input type=\"long\" name=\"txt_Title_Long\" title=\"What was your official job title?  Ex: Senior Business Analyst\" onkeyup=\"javascript:jobArray[" + jobArray[prm_jKey].Id + "].Title_Long=this.value;\" value=\"" + jobArray[prm_jKey].Title_Long + "\" /></td>";
-        edtHTM += "<td><input type=\"medium\" name=\"txt_Location\" title=\"Where was your job located?  Ex: Boston, MA\" onkeyup=\"javascript:jobArray[" + jobArray[prm_jKey].Id + "].Location=this.value;\" value=\"" + jobArray[prm_jKey].Location + "\" /></td>";
-        edtHTM += "<td><input type=\"short\" name=\"txt_Start\" title=\"When did you start this job (month/date)?  Ex: 01/12\" onkeyup=\"javascript:jobArray[" + jobArray[prm_jKey].Id + "].Start=this.value;\" value=\"" + jobArray[prm_jKey].StartStr + "\" /></td>";
-        edtHTM += "<td><input type=\"short\" name=\"txt_End\" title=\"When did you leave this job? (Blank if you're still there!)\" onkeyup=\"javascript:jobArray[" + jobArray[prm_jKey].Id + "].End=this.value;\" value=\"" + end_str + "\" /></td>";
-        edtHTM += "<td><input type=\"medium\" name=\"txt_Firm\" title=\"How should the company appear on the timeline (keep it short)?  Ex: ACME Corp\"  onkeyup=\"javascript:jobArray[" + jobArray[prm_jKey].Id + "].Firm=this.value;\" value=\"" + jobArray[prm_jKey].Firm + "\" /></td>";
-        edtHTM += "<td><input type=\"medium\" name=\"txt_Title\" title=\"How should your job appear on the timeline (keep it short)?  Ex: Sr. Analyst\" onkeyup=\"javascript:jobArray[" + jobArray[prm_jKey].Id + "].Title=this.value;\" value=\"" + jobArray[prm_jKey].Title + "\" /></td></tr>";
+        edtHTM += "<td><input type=\"long\" id=\"txt_Firm_Long\" title=\"What was the name of the place where you worked?<br>Ex: Acme Corporation\" onkeyup=\"javascript:selJobArrayz.Firm_Long=this.value;\" value=\"" + selJobArray.Firm_Long + "\" /></td>";
+        edtHTM += "<td><input type=\"long\" name=\"txt_Title_Long\" title=\"What was your official job title?  Ex: Senior Business Analyst\" onkeyup=\"javascript:selJobArray.Title_Long=this.value;\" value=\"" + selJobArray.Title_Long + "\" /></td>";
+        edtHTM += "<td><input type=\"medium\" name=\"txt_Location\" title=\"Where was your job located?  Ex: Boston, MA\" onkeyup=\"javascript:selJobArray.Location=this.value;\" value=\"" + selJobArray.Location + "\" /></td>";
+        edtHTM += "<td><input type=\"short\" name=\"txt_Start\" title=\"When did you start this job (month/date)?  Ex: 01/12\" onkeyup=\"javascript:selJobArray.Start=this.value;\" value=\"" + selJobArray.StartStr + "\" /></td>";
+        edtHTM += "<td><input type=\"short\" name=\"txt_End\" title=\"When did you leave this job? (Blank if you're still there!)\" onkeyup=\"javascript:selJobArray.End=this.value;\" value=\"" + end_str + "\" /></td>";
+        edtHTM += "<td><input type=\"medium\" name=\"txt_Firm\" title=\"How should the company appear on the timeline (keep it short)?  Ex: ACME Corp\"  onkeyup=\"javascript:jselJobArray.Firm=this.value;\" value=\"" + selJobArray.Firm + "\" /></td>";
+        edtHTM += "<td><input type=\"medium\" name=\"txt_Title\" title=\"How should your job appear on the timeline (keep it short)?  Ex: Sr. Analyst\" onkeyup=\"javascript:selJobArray.Title=this.value;\" value=\"" + selJobArray.Title + "\" /></td></tr>";
         edtHTM += "<tr><td colspan=8 class=\"cr_pop_txt5\">";
         edtHTM += "<table width=100% border=0><tr>";
         edtHTM += "<td width=40></td><td class=\"cr_pop_txt5\">Details</td>";
         edtHTM += "</tr></table></td></tr>";
 
         var jobCounter = 0;
-        for (var y = 0; y < jobDetails.length; y++) {
-            if (jobDetails[y].Id == jobArray[prm_jKey].Id) {
+        for (var y = 0; y < selJobDetails.length; y++) {
                 jobCounter += 1;
                 edtHTM += "<tr><td colspan=8><table><tr>";
                 edtHTM += "  <td id=\"sort_up" + jobCounter + "\" title=\"Move this job detail up.\" class=\"cr_sortup_off\" onmouseover='javascript:sort_mouse_event(" + jobCounter + ",\"up\",\"over\")' onmouseout='sort_mouse_event(" + jobCounter + ",\"up\",\"out\")' onclick=\"javascript:sortCr(" + jobCounter + ",1)\"></td>";
                 edtHTM += "  <td id=\"sort_down" + jobCounter + "\" title=\"Move this job detail down.\" class=\"cr_sortdown_off\" onmouseover='javascript:sort_mouse_event(" + jobCounter + ",\"down\",\"over\")' onmouseout='sort_mouse_event(" + jobCounter + ",\"down\",\"out\")' onclick=\"javascript:sortCr(" + jobCounter + ",-1)\"></td>";
-                edtHTM += "  <td class=\"pop_details\"><textarea id=\"cr_dtl" + jobCounter + "\" onkeyup=\"setSorts();\" title=\"Describe what you did at this job.\">" + jobDetails[y].Detail + "</textarea></td>";
+                edtHTM += "  <td class=\"pop_details\"><textarea id=\"cr_dtl" + jobCounter + "\" onkeyup=\"setSorts();\" title=\"Describe what you did at this job.\">" + selJobDetails[y].Detail + "</textarea></td>";
                 edtHTM += "  <td class=\"cr_pop_chk\" title=\"Hide this detail from your resume.  (Good when it's a work-in-progress.)\"><input type=\"checkbox\" />H</td>";
                 edtHTM += "  <td class=\"cr_pop_chk\" title=\"Private: Don't let others see this in their 'Other People Have Said' section.\" ><input type=\"checkbox\" />P</td>";
                 edtHTM += "</tr></table></td></tr>";
-            }
         }
         while (jobCounter < 5) {
             jobCounter += 1;
